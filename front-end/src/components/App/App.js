@@ -1,42 +1,62 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar/Navbar';
+import BannerCard from '../BannerCard/BannerCard';
 import './App.css';
 
 class App extends Component {
 
 
   state = {
-    article: false,
-    id: 5
+    articles: false,
+    latestArticle: false,
   }
 
-
-
   componentDidMount() {
-    fetch(`http://localhost:8888/wp-json/myplugin/v2/article/${this.state.id}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            article: result,
-          });
-          console.log(result);
-        },
-        (error) => {
-          this.setState({
-            error
-          });
+    if (localStorage.getItem('articles')) {
+      const articles = JSON.parse(localStorage.getItem('articles'));
+      this.setState({articles})
+    } else {
+        fetch(`http://localhost:8888/wp-json/myplugin/v2/articles`)
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                articles: result,
+              });
+              localStorage.setItem('articles', JSON.stringify(result));
+              console.log(result);
+            },
+            (error) => {
+              this.setState({
+                error
+              });
+            }
+          )
         }
-      )
+
+        if (localStorage.getItem("latestArticle")) {
+          const articles = JSON.parse(localStorage.getItem('articles'));
+          const latestArticle = articles.find(article => article.ID === parseInt(localStorage.getItem('latestArticle')));
+          this.setState({latestArticle})
+        }
     }
 
-  render() {
 
+  goToArticle = (id) => {
+    localStorage.setItem('latestArticle', id);
+    this.props.history.push({pathname:`/article/${id}`,});
+  };
+
+  render() {
+    const {articles, latestArticle} = this.state;
 
     return (
       <div className="App">
-        {this.state.article ?
-          <h1>{this.state.article.post_name}</h1> :
-          <h1>shit!!</h1> }
+        <Navbar/>
+        {latestArticle && <BannerCard latestArticle={this.state.latestArticle}/>}
+        {articles ? articles.map(article =>
+          <h2 key={article.ID} onClick={() => {this.goToArticle(article.ID)}}>{article.post_title}</h2>)
+          : <div>loading</div>}
       </div>
     );
   }
