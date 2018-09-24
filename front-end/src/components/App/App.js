@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
-import BannerCard from '../BannerCard/BannerCard';
+import Landing from '../Landing/Landing';
+import Arcive from '../Arcive/Arcive';
+import ReadList from '../ReadList/ReadList';
+import Article from '../Article/Article';
+import { Router, Link } from "@reach/router";
 import './App.css';
 
 class App extends Component {
@@ -53,10 +57,12 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar/>
-        {latestArticle && <BannerCard latestArticle={this.state.latestArticle}/>}
-        {articles ? articles.map(article =>
-          <h2 key={article.ID} onClick={() => {this.goToArticle(article.ID)}}>{article.post_title}</h2>)
-          : <div>loading</div>}
+        <Router>
+          <Landing articles={articles} latestArticle={latestArticle} path="/" />
+          <Arcive articles={articles} path="/arkiv"/>
+          <ReadList path="/laslista" />
+          <Article path="/article/:articleId" />
+        </Router>
       </div>
     );
   }
