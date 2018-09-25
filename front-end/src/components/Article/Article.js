@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/Navbar';
 
 class Article extends Component {
 
@@ -23,6 +22,7 @@ state = {
           });
         }
       )
+      localStorage.setItem('keepReading', JSON.stringify(this.props.articleId));
     }
 
   render() {

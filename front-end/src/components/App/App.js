@@ -4,8 +4,7 @@ import Landing from '../Landing/Landing';
 import Arcive from '../Arcive/Arcive';
 import ReadList from '../ReadList/ReadList';
 import Article from '../Article/Article';
-import { Router, Link } from "@reach/router";
-import './App.css';
+import { Router } from "@reach/router";
 
 class App extends Component {
 

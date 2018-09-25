@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ToggleButton from '../ToggleButton/ToggleButton';
-import { Router, Link } from "@reach/router";
-import './Navbar.css';
+import { Link } from "@reach/router";
 
 class Navbar extends Component {
 
@@ -12,9 +11,11 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <Link to="/">Filter</Link>
-        <Link to="/arkiv">Arkiv</Link>
-        <Link to="/laslista">Läslista</Link>
+        <div className="navLinks">
+          <Link to="/">Filter</Link>
+          <Link to="/arkiv">Arkiv</Link>
+          <Link to="/laslista">Läslista</Link>
+        </div>
         <div className="nightMode">
           <ToggleButton />
         </div>

@@ -4,15 +4,18 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.0",
+    "node-sass": "^4.9.3",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch-css & react-scripts start",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass src/assets/styles/style.scss src/index.css",
+    "watch-css": "node-sass src/assets/styles/style.scss src/index.css -w"
   }
 }
