@@ -7,7 +7,14 @@ class BannerCard extends Component {
       <div className="bannerCardWrapper">
         <Link to={`/article/${this.props.latestArticle.ID}`}>
           <div className="bannerCard">
-            <h1>{this.props.latestArticle.fields.title}</h1>
+            <div className="imageHere"></div>
+            <div className="textContentKeepReading">
+              <p>Fortsätt där du slutade</p>
+              <h1>{this.props.latestArticle.fields.title}</h1>
+              <p>15 min läsning</p>
+              <div className="progressBarKeepReading"></div>
+            </div>
+            <div className="closeKeepReading">X</div>
           </div>
         </Link>
       </div>

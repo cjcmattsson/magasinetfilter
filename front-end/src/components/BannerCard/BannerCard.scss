@@ -1,18 +1,54 @@
 .bannerCardWrapper {
   border: 1px solid black;
   border-radius: 5px;
-  width: 100%;
-  max-width: 500px;
+  width: auto;
   height: auto;
   a {
     text-decoration: none;
+
     .bannerCard {
+      position: relative;
       width: 100%;
-      height: 100%;
-      h1 {
-        color: hotpink;
-        margin: 0;
-      }
+      height: 112px;
+      display: flex;
+      flex-direction: row;
+
+        .imageHere {
+          height: 100%;
+          width: 112px;
+          background-color: hotpink;
+        }
+
+        .textContentKeepReading {
+          color: black;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1;
+            h1, p {
+              margin: 0;
+              margin-left: 8px;
+            }
+            p {
+              font-size: 14px;
+              margin-top: 8px;
+            }
+            h1 {
+              font-size: 18px;
+            }
+
+            .progressBarKeepReading {
+              height: 12px;
+              width: 100%;
+              background-color: green;
+            }
+        }
+
+        .closeKeepReading {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
     }
   }
 }

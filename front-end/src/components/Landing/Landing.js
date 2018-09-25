@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "@reach/router";
 import BannerCard from '../BannerCard/BannerCard';
+import LargeCard from '../LargeCard/LargeCard';
 
 class Landing extends Component {
 
@@ -34,10 +35,9 @@ componentDidMount() {
     return (
       <div className="Landing">
         {latestArticle && <BannerCard latestArticle={this.state.latestArticle}/>}
+        <h2>Rekommenderad läsning för dig</h2>
         {articles && articles.map(article =>
-        <Link className="Link" key={article.ID} to={`/article/${article.ID}`}>
-          <h2>{article.post_title}</h2>
-        </Link>)}
+          <LargeCard key={article.ID} article={article} />)}
       </div>
     );
   }
