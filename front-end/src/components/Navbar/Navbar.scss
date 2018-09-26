@@ -26,6 +26,13 @@
       justify-content: center;
       color: #E0AB9B;
       font-size: 18px;
+
+
+    }
+
+    .active svg path {
+      fill: $pink;
+      stroke: $pink;
     }
 
   }
