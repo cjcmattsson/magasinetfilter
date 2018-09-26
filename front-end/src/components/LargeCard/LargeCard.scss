@@ -1,9 +1,13 @@
 .largeCardWrapper {
-  width: auto;
+  box-sizing: border-box;
+  width: 80vw;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 2px 8px 0;
-  margin: 10px 0;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  flex: 0 0 auto;
+
 
   a {
     text-decoration: none;
@@ -11,10 +15,16 @@
     .largeCardContent {
       box-sizing: border-box;
       border-radius: 12px;
-      height: 300px;
+      height: 350px;
       width: 100%;
       padding: 20px;
+      margin-right: 16px;
+
+      h2 {
+        color: white;
+      }
 
     }
+
   }
 }

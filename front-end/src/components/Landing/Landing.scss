@@ -1,0 +1,32 @@
+.headerRecommended {
+  margin-left: 16px;
+}
+
+.landingLargeCardContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-left: 16px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .moreRecommended {
+    padding: 0 25px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin-right: 25px;
+    height: 350px;
+    width: 100px;
+    background-color: $pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transform: rotate(45deg);
+    }
+  }
+}

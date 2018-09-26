@@ -15,6 +15,7 @@ state = {
             article: result,
           });
           console.log(this.state.article);
+          localStorage.setItem('latestArticle', JSON.stringify(this.state.article));
         },
         (error) => {
           this.setState({

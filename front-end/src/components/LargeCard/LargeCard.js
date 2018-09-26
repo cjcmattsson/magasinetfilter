@@ -3,6 +3,7 @@ import { Link } from '@reach/router';
 
 class LargeCard extends Component {
 
+
   render() {
 
     const {article} = this.props;

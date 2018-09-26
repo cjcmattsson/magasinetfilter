@@ -44,12 +44,6 @@ class App extends Component {
         }
     }
 
-
-  goToArticle = (id) => {
-    localStorage.setItem('latestArticle', id);
-    this.props.history.push({pathname:`/article/${id}`,});
-  };
-
   render() {
     const {articles, latestArticle} = this.state;
 
