@@ -1,8 +1,8 @@
 .bannerCardWrapper {
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 12px;
   width: auto;
   height: auto;
+  box-shadow: 0 2px 8px 0;
   a {
     text-decoration: none;
 
@@ -14,9 +14,10 @@
       flex-direction: row;
 
         .imageHere {
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
           height: 100%;
           width: 112px;
-          background-color: hotpink;
         }
 
         .textContentKeepReading {
@@ -40,14 +41,26 @@
             .progressBarKeepReading {
               height: 12px;
               width: 100%;
-              background-color: green;
+              background-color: $pink;
+              border-bottom-right-radius: 12px;
             }
         }
 
         .closeKeepReading {
+          z-index: 50;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           position: absolute;
-          top: 10px;
-          right: 10px;
+          top: 0;
+          right: 0;
+          width: 48px;
+          height: 48px;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
         }
     }
   }

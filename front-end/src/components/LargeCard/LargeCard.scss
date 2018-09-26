@@ -1,15 +1,19 @@
 .largeCardWrapper {
   width: auto;
   height: auto;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0;
+  margin: 10px 0;
 
   a {
     text-decoration: none;
 
     .largeCardContent {
+      box-sizing: border-box;
+      border-radius: 12px;
       height: 300px;
       width: 100%;
+      padding: 20px;
 
     }
   }
