@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "@reach/router";
 import BannerCard from '../BannerCard/BannerCard';
 import LargeCard from '../LargeCard/LargeCard';
+import SmallBannerCard from '../SmallBannerCard/SmallBannerCard';
+import SmallCard from '../SmallCard/SmallCard';
 
 class Landing extends Component {
 
@@ -44,9 +46,19 @@ componentDidMount() {
         <div className="landingLargeCardContainer">
           {articles && articles.map(article =>
             <LargeCard key={article.ID} article={article} />)}
-          <div className="moreRecommended">
-            <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
-          </div>
+            <div className="moreRecommended">
+              <Link to="/arkiv">
+                <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
+              </Link>
+            </div>
+        </div>
+        <h2 className="mostReadArticles">Mest lästa</h2>
+          {articles && articles.map(article =>
+            <SmallBannerCard key={article.ID} article={article} />)}
+        <h2 className="headerRecommended">Senast släppta artiklar</h2>
+        <div className="landingSmallCardContainer">
+          {articles && articles.map(article =>
+            <SmallCard key={article.ID} article={article} />)}
         </div>
       </div>
     );

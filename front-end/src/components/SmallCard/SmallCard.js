@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 
-class LargeCard extends Component {
+class SmallCard extends Component {
 
 
   render() {
@@ -16,18 +16,16 @@ class LargeCard extends Component {
     }
 
     return (
-      <div className="largeCardWrapper">
+      <div className="smallCardWrapper">
         <Link className="Link" to={`/article/${article.ID}`}>
-          <div className="largeCardContent" style={imageStyle}>
-            <div className="addToList">
+          <div className="smallCardContent" style={imageStyle}>
+            <div className="topContent">
+              <div className="smallCardCategory">Kultur</div>
               <img src={require('../../assets/icons/icon_pink_save.svg')} alt=""/>
             </div>
-            <div className="contentText">
-              <div className="topContent">
-                <h2>{article.fields.title}</h2>
-                <p>20 minuters läsning</p>
-              </div>
-              <p>{article.fields.ingress}</p>
+            <div className="bottomText">
+              <h2>{article.fields.title}</h2>
+              <p>5 min läsning</p>
             </div>
           </div>
         </Link>
@@ -36,4 +34,4 @@ class LargeCard extends Component {
   }
 }
 
-export default LargeCard;
+export default SmallCard;

@@ -4,6 +4,13 @@ class Article extends Component {
 
 state = {
   article: false,
+  scrollPercentage: 0,
+}
+
+onScroll = () => {
+        const { clientHeight, scrollTop, scrollHeight } = document.documentElement;
+        const n = scrollTop / (scrollHeight - clientHeight);
+        localStorage.setItem('scrollLatest', Math.floor(n * 100));
 }
 
   componentDidMount() {
@@ -24,6 +31,11 @@ state = {
         }
       )
       localStorage.setItem('keepReading', JSON.stringify(this.props.articleId));
+      window.addEventListener('scroll', this.onScroll);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('scroll', this.onScroll);
     }
 
   render() {

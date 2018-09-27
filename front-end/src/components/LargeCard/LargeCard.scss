@@ -11,6 +11,7 @@
 
   a {
     text-decoration: none;
+    color: $white;
 
     .largeCardContent {
       box-sizing: border-box;
@@ -19,10 +20,46 @@
       width: 100%;
       padding: 20px;
       margin-right: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
 
-      h2 {
-        color: white;
+      .addToList {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        img {
+          
+        }
+
       }
+
+        .contentText {
+          height: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .topContent {
+            h2 {
+              font-family: HarrietDisplayMedium;
+              color: white;
+              margin: 0;
+            }
+
+            p {font-size: 12px}
+          }
+
+          p {
+            font-family: PfDinMedium;
+            font-size: 14px;
+            margin: 0;
+          }
+        }
 
     }
 

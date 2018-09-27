@@ -2,6 +2,11 @@
   margin-left: 16px;
 }
 
+.mostReadArticles {
+  margin-left: 16px;
+  margin-top: 2px;
+}
+
 .landingLargeCardContainer {
   box-sizing: border-box;
   display: flex;
@@ -13,20 +18,34 @@
     display: none;
   }
 
-  .moreRecommended {
-    padding: 0 25px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    margin-right: 25px;
-    height: 350px;
-    width: 100px;
-    background-color: $pink;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      transform: rotate(45deg);
+    .moreRecommended {
+      padding: 0 25px;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      margin-right: 25px;
+      height: 350px;
+      width: 100px;
+      background-color: $pink;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          img {
+            transform: rotate(45deg);
+          }
     }
   }
+}
+
+.landingSmallCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 16px;
 }
