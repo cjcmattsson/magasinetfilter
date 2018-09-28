@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToggleButton from '../ToggleButton/ToggleButton';
+import DropDownMenu from '../DropDownMenu/DropDownMenu';
 import { Link } from "@reach/router";
 
 class Navbar extends Component {
@@ -7,11 +8,14 @@ class Navbar extends Component {
   state = {
     active: "#FFF",
     notActive: "#000",
+    dropDownMenu: false,
+  }
+
+  openDropDown = () => {
+    this.setState({dropDownMenu: !this.state.dropDownMenu})
   }
 
   render() {
-
-
     const NavLink = props => (
       <Link
         {...props}
@@ -42,8 +46,9 @@ class Navbar extends Component {
             </g>
           </svg></NavLink>
           <img src={require('../../assets/icons/switchmoon.svg')} alt=""/>
-          <img src={require('../../assets/icons/icon_black_menu.svg')} alt=""/>
+          <img onClick={this.openDropDown} src={require('../../assets/icons/icon_black_menu.svg')} alt=""/>
         </div>
+         <DropDownMenu dropDownMenu={this.state.dropDownMenu}/>
       </div>
     )
   }

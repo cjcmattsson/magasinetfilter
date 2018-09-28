@@ -8,12 +8,13 @@ body {
   left: 0;
   width: 100vw;
   height: 56px;
-  background-color: #F8F8F8;
-  box-shadow: inset 0 0 0 0;
   display: flex;
   flex-direction: row;
   z-index: 1000; }
   .navbar .navLinks {
+    box-shadow: inset 0 0 0 0;
+    background-color: #F8F8F8;
+    z-index: 1000;
     padding: 0 16px;
     height: 100%;
     width: 100%;
@@ -37,6 +38,34 @@ body {
     align-items: center;
     height: 100%;
     width: 65px; }
+
+.dropDownMenu {
+  padding-top: 30px;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E0AB9B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100vh);
+  transition: 0.4s all ease-in-out; }
+  .dropDownMenu .dropDownMenuLinks {
+    width: 230px;
+    height: 80vh;
+    border: 1px solid black; }
+  .dropDownMenu ul {
+    padding: 0;
+    margin-top: 15px;
+    list-style: none; }
+    .dropDownMenu ul li {
+      text-transform: uppercase;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      height: 32px;
+      border-bottom: 1px solid #FFFFFF; }
 
 .App {
   padding: 80px 0 0px;
