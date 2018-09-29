@@ -53,7 +53,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-top: 18px; }
   .footerWrapper h3 {
     text-transform: uppercase;
     font-family: PfDinPro;
@@ -364,6 +365,48 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between; }
+  .archiveWrapper .searchFieldWrapper {
+    width: 100%;
+    height: 32px;
+    box-sizing: border-box;
+    background-color: #ECECEC;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 4px 0 45px; }
+    .archiveWrapper .searchFieldWrapper .searchFieldInput {
+      box-sizing: border-box;
+      padding-left: 10px;
+      border-radius: 12px;
+      border: none;
+      height: 24px;
+      width: 100%; }
+    .archiveWrapper .searchFieldWrapper .searchFieldInput:active, .archiveWrapper .searchFieldWrapper .searchFieldInput:focus {
+      outline: none; }
+  .archiveWrapper .sortAndFilterFields {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 18px; }
+    .archiveWrapper .sortAndFilterFields .sortByField, .archiveWrapper .sortAndFilterFields .filterByField {
+      box-sizing: border-box;
+      background-color: #ECECEC;
+      height: 32px;
+      width: 48%;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px; }
+      .archiveWrapper .sortAndFilterFields .sortByField p, .archiveWrapper .sortAndFilterFields .filterByField p {
+        margin: 0; }
+      .archiveWrapper .sortAndFilterFields .sortByField img, .archiveWrapper .sortAndFilterFields .filterByField img {
+        transform: rotate(90deg); }
 
 .socialMediaLogos {
   margin: 0 auto;
