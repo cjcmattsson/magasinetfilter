@@ -30,10 +30,20 @@
         height: auto;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
 
-        img {
-          
+        .category {
+          box-sizing: border-box;
+          background-color: $pink;
+          color: $white;
+          border-radius: 8px;
+          height: 24px;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2px 5px;
+          text-transform: uppercase;
         }
 
       }

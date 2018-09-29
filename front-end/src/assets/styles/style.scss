@@ -1,6 +1,7 @@
 @import './general.scss';
 @import './colors.scss';
 @import '../../components/Navbar/Navbar';
+@import '../../components/Footer/Footer';
 @import '../../components/DropDownMenu/DropDownMenu';
 @import '../../components/App/App';
 @import './fonts/fonts';
@@ -9,3 +10,6 @@
 @import '../../components/SmallBannerCard/SmallBannerCard';
 @import '../../components/Landing/Landing';
 @import '../../components/SmallCard/SmallCard';
+@import '../../components/ReadList/ReadList';
+@import '../../components/Archive/Archive';
+@import '../../components/SocialMediaLogos/SocialMediaLogos';

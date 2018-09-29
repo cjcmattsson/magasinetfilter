@@ -1,0 +1,12 @@
+.archiveWrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 16px;
+
+  .archiveCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

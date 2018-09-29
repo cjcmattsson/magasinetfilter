@@ -20,6 +20,7 @@ class LargeCard extends Component {
         <Link className="Link" to={`/article/${article.ID}`}>
           <div className="largeCardContent" style={imageStyle}>
             <div className="addToList">
+              <div className="category">Kultur</div>
               <img src={require('../../assets/icons/icon_pink_save.svg')} alt=""/>
             </div>
             <div className="contentText">

@@ -1,4 +1,8 @@
 .App {
+  box-sizing: border-box;
   padding: 80px 0 0px;
   min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }

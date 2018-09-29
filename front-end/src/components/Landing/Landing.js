@@ -54,7 +54,7 @@ componentDidMount() {
         </div>
         <h2 className="mostReadArticles">Mest lästa</h2>
           {articles && articles.map(article =>
-            <SmallBannerCard key={article.ID} article={article} />)}
+            <SmallBannerCard markedSaved={false} key={article.ID} article={article} />)}
         <h2 className="headerRecommended">Senast släppta artiklar</h2>
         <div className="landingSmallCardContainer">
           {articles && articles.map(article =>

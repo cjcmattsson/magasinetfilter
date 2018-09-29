@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-point-to-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu/option" transform="translate(-207.000000, -5.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Group" transform="translate(9.000000, 0.000000)">
+                <g id="arrow-point-to-right" transform="translate(198.000000, 5.000000)">
+                    <path d="M8.56907877,8.79208228 L1.8641096,15.6716145 C1.43759257,16.1094618 0.746068321,16.1094618 0.319758356,15.6716145 C-0.106586119,15.2341567 -0.106586119,14.5246422 0.319758356,14.0872198 L6.25262092,7.99988492 L0.31993091,1.91276251 C-0.106413566,1.47512764 -0.106413566,0.765683959 0.31993091,0.328226147 C0.746275385,-0.109408716 1.43776513,-0.109408716 1.86428215,0.328226147 L8.56925132,7.20786461 C8.78242356,7.42669975 8.88888889,7.71320381 8.88888889,7.99984951 C8.88888889,8.28663685 8.78221649,8.57335337 8.56907877,8.79208228 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

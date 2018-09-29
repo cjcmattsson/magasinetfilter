@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 import Landing from '../Landing/Landing';
-import Arcive from '../Arcive/Arcive';
+import Archive from '../Archive/Archive';
 import ReadList from '../ReadList/ReadList';
 import Article from '../Article/Article';
 import { Router } from "@reach/router";
@@ -52,10 +53,11 @@ class App extends Component {
         <Navbar/>
         <Router>
           <Landing articles={articles} latestArticle={latestArticle} path="/" />
-          <Arcive articles={articles} path="/arkiv"/>
-          <ReadList path="/laslista" />
+          <Archive articles={articles} path="/arkiv"/>
+          <ReadList articles={articles} path="/laslista" />
           <Article path="/article/:articleId" />
         </Router>
+        <Footer/>
       </div>
     );
   }

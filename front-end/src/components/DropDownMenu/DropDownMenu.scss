@@ -9,12 +9,11 @@
   justify-content: center;
   align-items: center;
   transform: translateY(-100vh);
-  transition: 0.4s all ease-in-out;
+  transition: 0.5s all ease-out;
 
   .dropDownMenuLinks {
-    width: 230px;
+    width: 232px;
     height: 80vh;
-    border: 1px solid black;
   }
 
   ul {
@@ -23,12 +22,35 @@
     list-style: none;
 
     li {
+      box-sizing: border-box;
       text-transform: uppercase;
-      padding-left: 10px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       height: 32px;
       border-bottom: 1px solid $white;
+      padding: 0 9px;
+
+      p {
+        font-family: PfDinPro;
+        font-size: 18px;
+        margin: 0;
+        padding-top: 5px;
+      }
+
+      img {
+        height: 13px;
+      }
     }
   }
+
+  .topMenuItems, .middleMenuItems {
+    margin-bottom: 48px;
+  }
+
+  .bottomMenuItems {
+    margin-bottom: 31px;
+  }
+
+  
 }

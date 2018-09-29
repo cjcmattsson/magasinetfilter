@@ -27,8 +27,10 @@
       justify-content: center;
       color: #E0AB9B;
       font-size: 18px;
+    }
 
-
+    a:nth-child(1) {
+      margin-right: 10px; 
     }
 
     .active svg path {

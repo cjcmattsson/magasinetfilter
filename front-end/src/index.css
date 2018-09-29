@@ -1,6 +1,8 @@
 body {
   margin: 0px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  min-height: 100vh;
+  height: 100%; }
 
 .navbar {
   position: fixed;
@@ -29,6 +31,8 @@ body {
       justify-content: center;
       color: #E0AB9B;
       font-size: 18px; }
+    .navbar .navLinks a:nth-child(1) {
+      margin-right: 10px; }
     .navbar .navLinks .active svg path {
       fill: #E0AB9B;
       stroke: #E0AB9B; }
@@ -38,6 +42,27 @@ body {
     align-items: center;
     height: 100%;
     width: 65px; }
+
+.footerWrapper {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+  background-color: #E0AB9B;
+  height: 270px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
+  .footerWrapper h3 {
+    text-transform: uppercase;
+    font-family: PfDinPro;
+    font-weight: normal;
+    margin: 0;
+    width: 175px;
+    text-align: center;
+    height: 25px;
+    border-bottom: 1px solid #FFFFFF; }
 
 .dropDownMenu {
   padding-top: 30px;
@@ -50,26 +75,42 @@ body {
   justify-content: center;
   align-items: center;
   transform: translateY(-100vh);
-  transition: 0.4s all ease-in-out; }
+  transition: 0.5s all ease-out; }
   .dropDownMenu .dropDownMenuLinks {
-    width: 230px;
-    height: 80vh;
-    border: 1px solid black; }
+    width: 232px;
+    height: 80vh; }
   .dropDownMenu ul {
     padding: 0;
     margin-top: 15px;
     list-style: none; }
     .dropDownMenu ul li {
+      box-sizing: border-box;
       text-transform: uppercase;
-      padding-left: 10px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       height: 32px;
-      border-bottom: 1px solid #FFFFFF; }
+      border-bottom: 1px solid #FFFFFF;
+      padding: 0 9px; }
+      .dropDownMenu ul li p {
+        font-family: PfDinPro;
+        font-size: 18px;
+        margin: 0;
+        padding-top: 5px; }
+      .dropDownMenu ul li img {
+        height: 13px; }
+  .dropDownMenu .topMenuItems, .dropDownMenu .middleMenuItems {
+    margin-bottom: 48px; }
+  .dropDownMenu .bottomMenuItems {
+    margin-bottom: 31px; }
 
 .App {
+  box-sizing: border-box;
   padding: 80px 0 0px;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
 
 @font-face {
   font-family: 'HarrietDisplayMedium';
@@ -78,6 +119,10 @@ body {
 @font-face {
   font-family: 'PfDinMedium';
   src: url("assets/styles/fonts/PfDinMedium.otf"); }
+
+@font-face {
+  font-family: 'PfDinPro';
+  src: url("assets/styles/fonts/pf-din-text-pro.otf"); }
 
 .bannerCardWrapper {
   width: auto;
@@ -168,7 +213,19 @@ body {
         height: auto;
         display: flex;
         align-items: center;
-        justify-content: flex-end; }
+        justify-content: space-between; }
+        .largeCardWrapper a .largeCardContent .addToList .category {
+          box-sizing: border-box;
+          background-color: #E0AB9B;
+          color: #FFFFFF;
+          border-radius: 8px;
+          height: 24px;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2px 5px;
+          text-transform: uppercase; }
       .largeCardWrapper a .largeCardContent .contentText {
         height: 40%;
         display: flex;
@@ -282,6 +339,8 @@ body {
           background-color: #E0AB9B;
           color: #FFFFFF;
           border-radius: 8px;
+          height: 24px;
+          font-size: 14px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -295,3 +354,24 @@ body {
           font-size: 14px; }
         .smallCardWrapper a .smallCardContent .bottomText p {
           font-size: 12px; }
+
+.archiveWrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 16px; }
+  .archiveWrapper .archiveCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+
+.socialMediaLogos {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 168px; }
+  .socialMediaLogos img {
+    height: 32px;
+    width: 32px; }

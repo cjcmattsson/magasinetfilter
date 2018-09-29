@@ -1,0 +1,23 @@
+.footerWrapper { 
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+  background-color: $pink;
+  height: 270px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  h3 {
+  text-transform: uppercase;
+  font-family: PfDinPro;
+  font-weight: normal;
+  margin: 0;
+  width: 175px;
+  text-align: center;
+  height: 25px;
+  border-bottom: 1px solid $white;
+  }
+}
