@@ -1,11 +1,6 @@
-.headerRecommended {
-  margin-left: 16px;
-}
+.landingWrapper {
+padding-top: 15px;
 
-.mostReadArticles {
-  margin-left: 16px;
-  margin-top: 2px;
-}
 
 .landingLargeCardContainer {
   box-sizing: border-box;
@@ -39,6 +34,16 @@
   }
 }
 
+.mostReadArticlesContainer {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 16px;
+
+  .mostReadArticles {
+    margin-top: 2px;
+  }
+}
+
 .landingSmallCardContainer {
   display: flex;
   flex-direction: row;
@@ -48,4 +53,17 @@
   box-sizing: border-box;
   width: 100vw;
   padding: 0 16px;
+
+  .headerRecommended {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+  }
+}
+.headerRecommended {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 16px;
+}
+
 }

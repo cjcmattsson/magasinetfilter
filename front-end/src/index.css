@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0px;
   box-sizing: border-box;
@@ -107,7 +110,7 @@ body {
 
 .App {
   box-sizing: border-box;
-  padding: 80px 0 0px;
+  padding: 56px 0 0px;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -124,6 +127,10 @@ body {
 @font-face {
   font-family: 'PfDinPro';
   src: url("assets/styles/fonts/pf-din-text-pro.otf"); }
+
+@font-face {
+  font-family: 'DinAlternateBold';
+  src: url("assets/styles/fonts/DIN Alternate Bold.ttf"); }
 
 .bannerCardWrapper {
   width: auto;
@@ -194,43 +201,44 @@ body {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
   margin-right: 16px;
   margin-bottom: 16px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 0 0 auto; }
+  .largeCardWrapper .addToList {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 16px; }
+    .largeCardWrapper .addToList .categoryTags {
+      display: flex;
+      flex-direction: row; }
+      .largeCardWrapper .addToList .categoryTags .tag {
+        margin-right: 10px; }
   .largeCardWrapper a {
     text-decoration: none;
     color: #FFFFFF; }
     .largeCardWrapper a .largeCardContent {
       box-sizing: border-box;
       border-radius: 12px;
-      height: 350px;
       width: 100%;
       padding: 20px;
       margin-right: 16px;
       display: flex;
+      flex: 1;
+      height: 280px;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-end;
       position: relative; }
-      .largeCardWrapper a .largeCardContent .addToList {
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; }
-        .largeCardWrapper a .largeCardContent .addToList .category {
-          box-sizing: border-box;
-          background-color: #E0AB9B;
-          color: #FFFFFF;
-          border-radius: 8px;
-          height: 24px;
-          font-size: 14px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2px 5px;
-          text-transform: uppercase; }
       .largeCardWrapper a .largeCardContent .contentText {
         height: 40%;
         display: flex;
         flex-direction: column;
+        height: 100px;
         justify-content: space-between; }
         .largeCardWrapper a .largeCardContent .contentText .topContent h2 {
           font-family: HarrietDisplayMedium;
@@ -245,108 +253,111 @@ body {
 
 .smallBannerCardWrapper {
   width: auto;
-  height: auto;
-  padding: 0 16px; }
-  .smallBannerCardWrapper a {
-    text-decoration: none; }
-    .smallBannerCardWrapper a .smallBannerCardContent {
-      width: 100%;
-      height: 66px;
-      margin-bottom: 12px;
+  height: auto; }
+  .smallBannerCardWrapper .smallBannerCardContent {
+    width: 100%;
+    height: 66px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .smallBannerCardWrapper .smallBannerCardContent a {
+      text-decoration: none;
       display: flex;
-      flex-direction: row; }
-      .smallBannerCardWrapper a .smallBannerCardContent .smallCardImage {
+      flex-direction: row;
+      flex: 1; }
+      .smallBannerCardWrapper .smallBannerCardContent a .smallCardImage {
         height: 66px;
         width: 66px; }
-      .smallBannerCardWrapper a .smallBannerCardContent .smallCardText {
+      .smallBannerCardWrapper .smallBannerCardContent a .smallCardText {
         padding-left: 12px;
         flex: 1; }
-        .smallBannerCardWrapper a .smallBannerCardContent .smallCardText h2 {
+        .smallBannerCardWrapper .smallBannerCardContent a .smallCardText h2 {
           color: #000000;
           font-size: 18px;
           margin: 0;
           margin-top: -3px; }
-        .smallBannerCardWrapper a .smallBannerCardContent .smallCardText p {
+        .smallBannerCardWrapper .smallBannerCardContent a .smallCardText p {
           color: #000000;
           margin: 0; }
-      .smallBannerCardWrapper a .smallBannerCardContent .smallCardSave {
-        width: auto;
-        height: 100%; }
+    .smallBannerCardWrapper .smallBannerCardContent .smallCardSave {
+      width: 20px;
+      height: 100%; }
 
-.headerRecommended {
-  margin-left: 16px; }
-
-.mostReadArticles {
-  margin-left: 16px;
-  margin-top: 2px; }
-
-.landingLargeCardContainer {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  padding-left: 16px; }
-  .landingLargeCardContainer::-webkit-scrollbar {
-    display: none; }
-  .landingLargeCardContainer .moreRecommended {
-    padding: 0 25px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    margin-right: 25px;
-    height: 350px;
-    width: 100px;
-    background-color: #E0AB9B; }
-    .landingLargeCardContainer .moreRecommended a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      width: 100%; }
-      .landingLargeCardContainer .moreRecommended a img {
-        transform: rotate(45deg); }
-
-.landingSmallCardContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  box-sizing: border-box;
-  width: 100vw;
-  padding: 0 16px; }
+.landingWrapper {
+  padding-top: 15px; }
+  .landingWrapper .landingLargeCardContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding-left: 16px; }
+    .landingWrapper .landingLargeCardContainer::-webkit-scrollbar {
+      display: none; }
+    .landingWrapper .landingLargeCardContainer .moreRecommended {
+      padding: 0 25px;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      margin-right: 25px;
+      height: 350px;
+      width: 100px;
+      background-color: #E0AB9B; }
+      .landingWrapper .landingLargeCardContainer .moreRecommended a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%; }
+        .landingWrapper .landingLargeCardContainer .moreRecommended a img {
+          transform: rotate(45deg); }
+  .landingWrapper .mostReadArticlesContainer {
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0 16px; }
+    .landingWrapper .mostReadArticlesContainer .mostReadArticles {
+      margin-top: 2px; }
+  .landingWrapper .landingSmallCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0 16px; }
+    .landingWrapper .landingSmallCardContainer .headerRecommended {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0; }
+  .landingWrapper .headerRecommended {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 16px; }
 
 .smallCardWrapper {
   width: auto;
   height: auto;
-  margin-bottom: 4.5%; }
+  margin-bottom: 4.5%;
+  height: 190px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .smallCardWrapper .topContent {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
   .smallCardWrapper a {
     text-decoration: none; }
     .smallCardWrapper a .smallCardContent {
-      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
       box-sizing: border-box;
-      border-radius: 12px;
       width: 43vw;
-      height: 190px;
       padding: 10px;
+      height: 160px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
-      .smallCardWrapper a .smallCardContent .topContent {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; }
-        .smallCardWrapper a .smallCardContent .topContent .smallCardCategory {
-          box-sizing: border-box;
-          background-color: #E0AB9B;
-          color: #FFFFFF;
-          border-radius: 8px;
-          height: 24px;
-          font-size: 14px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2px 5px;
-          text-transform: uppercase; }
+      align-items: flex-end; }
       .smallCardWrapper a .smallCardContent .bottomText {
         color: #FFFFFF; }
         .smallCardWrapper a .smallCardContent .bottomText h2, .smallCardWrapper a .smallCardContent .bottomText p {
@@ -356,10 +367,32 @@ body {
         .smallCardWrapper a .smallCardContent .bottomText p {
           font-size: 12px; }
 
+.readListWrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 16px 16px 0; }
+  .readListWrapper .readListHistoryButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 18px; }
+    .readListWrapper .readListHistoryButtons .readListButton, .readListWrapper .readListHistoryButtons .historyButton {
+      box-sizing: border-box;
+      background-color: #ECECEC;
+      height: 32px;
+      width: 48%;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px; }
+
 .archiveWrapper {
   box-sizing: border-box;
   width: 100vw;
-  padding: 0 16px; }
+  padding: 16px 16px 0; }
   .archiveWrapper .archiveCards {
     display: flex;
     flex-direction: row;
@@ -418,3 +451,72 @@ body {
   .socialMediaLogos img {
     height: 32px;
     width: 32px; }
+
+.articleWrapper {
+  box-sizing: border-box; }
+  .articleWrapper .articleHeader {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .articleWrapper .articleHeader .topContentArticle {
+      margin: 24px 16px;
+      height: 33px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      .articleWrapper .articleHeader .topContentArticle .categoryAndNumber, .articleWrapper .articleHeader .topContentArticle .saveAndClose {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start; }
+      .articleWrapper .articleHeader .topContentArticle .categoryAndNumber .categoryNumberChild {
+        margin-right: 10px; }
+      .articleWrapper .articleHeader .topContentArticle .saveAndClose img {
+        margin-left: 14px; }
+      .articleWrapper .articleHeader .topContentArticle .saveAndClose img:nth-child(1) {
+        margin-top: -1.5px; }
+    .articleWrapper .articleHeader .bottomContentArticle {
+      box-sizing: border-box;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .articleWrapper .articleHeader .bottomContentArticle h2, .articleWrapper .articleHeader .bottomContentArticle h3, .articleWrapper .articleHeader .bottomContentArticle p {
+        font-family: DinAlternateBold;
+        margin: 0;
+        color: #FFFFFF; }
+      .articleWrapper .articleHeader .bottomContentArticle div {
+        margin-bottom: 24px; }
+  .articleWrapper .articleTextWrapper {
+    padding: 16px; }
+    .articleWrapper .articleTextWrapper .contentCreators, .articleWrapper .articleTextWrapper .listenAndShareIcons {
+      margin-bottom: 12px; }
+    .articleWrapper .articleTextWrapper .listenAndShareIcons {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .articleWrapper .articleTextWrapper .listenAndShareIcons img {
+        height: 32px;
+        width: 32px;
+        margin-right: 12px; }
+    .articleWrapper .articleTextWrapper p {
+      margin: 0; }
+
+.categoryBox {
+  box-sizing: border-box;
+  height: 24px;
+  background-color: #E0AB9B;
+  border-radius: 4px;
+  display: flex;
+  align-items: center; }
+  .categoryBox p {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin: 7px 6px 6px;
+    font-family: DinAlternateBold; }

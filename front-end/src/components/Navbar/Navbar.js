@@ -24,8 +24,7 @@ class Navbar extends Component {
           // the object returned here is passed to the
           // anchor element's props
           return {
-            className: isCurrent ? "active" : "notActive"
-
+            className: isCurrent ? "active" : "notActive",
           };
       } }
       />

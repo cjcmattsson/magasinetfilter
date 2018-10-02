@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
+
 
 class SmallBannerCard extends Component {
 
@@ -16,18 +18,18 @@ class SmallBannerCard extends Component {
 
     return (
       <div className="smallBannerCardWrapper">
-        <Link to={`/article/${article.ID}`}>
           <div className="smallBannerCardContent">
+            <Link to={`/article/${article.ID}`}>
             <div className="smallCardImage" style={imageStyle}></div>
             <div className="smallCardText">
               <h2>{article.fields.title}</h2>
               <p>5 min läsning</p>
             </div>
+          </Link>
             <div className="smallCardSave">
-              <img src={markedSaved ? require('../../assets/icons/icon_pink_saved.svg') : require('../../assets/icons/icon_pink_save.svg')} alt=""/>
+              <SaveArticleIcon />
             </div>
           </div>
-        </Link>
       </div>
     )
   }

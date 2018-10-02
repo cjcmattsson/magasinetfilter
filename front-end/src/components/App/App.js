@@ -15,6 +15,10 @@ class App extends Component {
     latestArticle: false,
   }
 
+  componentDidUpdate () {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     if (localStorage.getItem('articles')) {
       const articles = JSON.parse(localStorage.getItem('articles'));
@@ -55,7 +59,7 @@ class App extends Component {
           <Landing articles={articles} latestArticle={latestArticle} path="/" />
           <Archive articles={articles} path="/arkiv"/>
           <ReadList articles={articles} path="/laslista" />
-          <Article path="/article/:articleId" />
+          <Article articles={articles} latestArticle={latestArticle} path="/article/:articleId" />
         </Router>
         <Footer/>
       </div>

@@ -1,0 +1,26 @@
+.readListWrapper {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 16px 16px 0;
+
+  .readListHistoryButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 18px;
+
+    .readListButton, .historyButton {
+      box-sizing: border-box;
+      background-color: $grey;
+      height: 32px;
+      width: 48%;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+    }
+  }
+}

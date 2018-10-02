@@ -2,39 +2,32 @@
   width: auto;
   height: auto;
   margin-bottom: 4.5%;
+  height: 190px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .topContent {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   a {
     text-decoration: none;
 
     .smallCardContent {
-      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
       box-sizing: border-box;
-      border-radius: 12px;
       width: 43vw;
-      height: 190px;
       padding: 10px;
+      height: 160px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: flex-end;
 
-      .topContent {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .smallCardCategory {
-          box-sizing: border-box;
-          background-color: $pink;
-          color: $white;
-          border-radius: 8px;
-          height: 24px;
-          font-size: 14px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2px 5px;
-          text-transform: uppercase;
-        }
-      }
+
       .bottomText {
         color: $white;
 

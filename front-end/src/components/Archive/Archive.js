@@ -3,6 +3,20 @@ import SmallCard from '../SmallCard/SmallCard';
 
 class Archive extends Component {
 
+  componentWillReceiveProps () {
+      const element = this;
+      if (element != null) {
+        this.scrollPosition = window.scrollY
+      }
+    }
+
+    componentDidUpdate () {
+      const element = this;
+      if (element != null) {
+        window.scrollTo(0, this.scrollPosition)
+      }
+    }
+
   render() {
     const {articles} = this.props;
 

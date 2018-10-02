@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import CategoryBox from '../CategoryBox/CategoryBox';
+import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
+
+
 
 class SmallCard extends Component {
 
@@ -16,13 +20,13 @@ class SmallCard extends Component {
     }
 
     return (
-      <div className="smallCardWrapper">
+      <div className="smallCardWrapper" style={imageStyle}>
+        <div className="topContent">
+          <CategoryBox category={article.fields.category}/>
+          <SaveArticleIcon />
+        </div>
         <Link className="Link" to={`/article/${article.ID}`}>
-          <div className="smallCardContent" style={imageStyle}>
-            <div className="topContent">
-              <div className="smallCardCategory">Kultur</div>
-              <img src={require('../../assets/icons/icon_pink_save.svg')} alt=""/>
-            </div>
+          <div className="smallCardContent" >
             <div className="bottomText">
               <h2>{article.fields.title}</h2>
               <p>5 min läsning</p>

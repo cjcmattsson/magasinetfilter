@@ -11,9 +11,7 @@ class BannerCard extends Component {
   render() {
 
     const {latestArticle} = this.props;
-
     const scrollLatest = localStorage.getItem('scrollLatest')
-
     const progressBar = {
       width: `${scrollLatest}%`
     }
