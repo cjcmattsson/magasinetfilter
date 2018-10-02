@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     articles: false,
     latestArticle: false,
+    switchMode: true,
   }
 
   componentDidUpdate () {
@@ -48,13 +49,16 @@ class App extends Component {
           this.setState({latestArticle})
         }
     }
+    switchMode = () => {
+      this.setState({switchMode: !this.state.switchMode});
+    }
 
   render() {
-    const {articles, latestArticle} = this.state;
+    const {articles, latestArticle, switchMode} = this.state;
 
     return (
-      <div className="App">
-        <Navbar/>
+      <div className="App" style={{backgroundColor: switchMode ? "#FFF" : "#000"}}>
+        <Navbar switchModeChange={this.switchMode} switchMode={this.state.switchMode}/>
         <Router>
           <Landing articles={articles} latestArticle={latestArticle} path="/" />
           <Archive articles={articles} path="/arkiv"/>

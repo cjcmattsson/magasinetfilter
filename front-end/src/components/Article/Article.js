@@ -6,6 +6,8 @@ class Article extends Component {
 state = {
   article: false,
   scrollPercentage: 0,
+  fontChange: false,
+  fontSize: 20,
 }
 
 onScroll = () => {
@@ -39,6 +41,21 @@ onScroll = () => {
       window.removeEventListener('scroll', this.onScroll);
     }
 
+    goBack = () => {
+      window.history.back();
+    }
+
+    activateFontChange = () => {
+      this.setState({fontChange : !this.state.fontChange})
+    }
+
+    increaseFontSize = () => {
+      this.setState({fontSize: this.state.fontSize + 2})
+    }
+    decreaseFontSize = () => {
+      this.setState({fontSize: this.state.fontSize - 2})
+    }
+
   render() {
     const {article, saveArticle} = this.state;
 
@@ -47,6 +64,10 @@ onScroll = () => {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
+    }
+
+    const fontSize = {
+      fontSize: `${this.state.fontSize}px`,
     }
 
     return (
@@ -61,7 +82,7 @@ onScroll = () => {
                 </div>
                 <div className="saveAndClose">
                   <SaveArticleIcon />
-                  <img src={require('../../assets/icons/closewhite.svg')} alt=""/>
+                  <img onClick={this.goBack} src={require('../../assets/icons/closewhite.svg')} alt=""/>
                 </div>
               </div>
               <div className="bottomContentArticle">
@@ -81,9 +102,16 @@ onScroll = () => {
                 <img src={require('../../assets/icons/sound_dark.svg')} alt=""/>
                 <img src={require('../../assets/icons/share_dark.svg')} alt=""/>
               </div>
-              <p>{article.fields.text}</p>
+              <p style={fontSize}>{article.fields.text}</p>
             </div>
           </div>}
+          <div className="fontSizeChange">
+            <img onClick={this.activateFontChange} src={require('../../assets/icons/textsize_unactive.svg')} alt=""/>
+            <div className="textChangeButtons" style={{display: this.state.fontChange ? "block" : "none"}}>
+              <p onClick={this.increaseFontSize}>+</p>
+              <p onClick={this.decreaseFontSize}>—</p>
+            </div>
+          </div>
         </div>
       );
     }

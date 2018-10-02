@@ -18,7 +18,7 @@ class ReadList extends Component {
     componentDidUpdate () {
       const element = this;
       if (element != null) {
-        window.scrollTo(0, 0)
+        window.scrollTo(0,0)
       }
     }
 

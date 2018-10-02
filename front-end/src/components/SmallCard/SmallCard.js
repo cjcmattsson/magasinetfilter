@@ -7,11 +7,8 @@ import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
 
 class SmallCard extends Component {
 
-
   render() {
-
     const {article} = this.props;
-
     const imageStyle = {
       backgroundImage: `url(${article.fields.image.url})`,
       backgroundPosition: 'center',

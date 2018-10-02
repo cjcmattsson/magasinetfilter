@@ -9,10 +9,11 @@ class Navbar extends Component {
     active: "#FFF",
     notActive: "#000",
     dropDownMenu: false,
+    darkMode: false,
   }
 
   openDropDown = () => {
-    this.setState({dropDownMenu: !this.state.dropDownMenu})
+    this.setState({dropDownMenu: !this.state.dropDownMenu});
   }
 
   render() {
@@ -44,7 +45,7 @@ class Navbar extends Component {
               <path d="M.392619048 0L.392619048 26M4.77214286 3.2946875L4.77214286 26M8.26119048 4.095L16.607381 25.1996875"/>
             </g>
           </svg></NavLink>
-          <img src={require('../../assets/icons/switchmoon.svg')} alt=""/>
+        <img onClick={this.props.switchModeChange} src={this.props.switchMode ? require('../../assets/icons/switchmoon.svg') : require('../../assets/icons/switchsun.svg')} alt=""/>
           <img onClick={this.openDropDown} src={require('../../assets/icons/icon_black_menu.svg')} alt=""/>
         </div>
          <DropDownMenu dropDownMenu={this.state.dropDownMenu}/>
