@@ -13,7 +13,7 @@ class Archive extends Component {
     componentDidUpdate () {
       const element = this;
       if (element != null) {
-        window.scrollTo(0, this.scrollPosition)
+        window.scrollTo(0, this.scrollPosition);
       }
     }
 

@@ -8,20 +8,6 @@ class ReadList extends Component {
     historyTab: false,
   }
 
-  componentWillReceiveProps () {
-      const element = this;
-      if (element != null) {
-        this.scrollPosition = window.scrollY
-      }
-    }
-
-    componentDidUpdate () {
-      const element = this;
-      if (element != null) {
-        window.scrollTo(0,0)
-      }
-    }
-
     listTab = () => {
       this.setState({listTab: true, historyTab: false})
     }
@@ -32,7 +18,6 @@ class ReadList extends Component {
   render() {
 
     const {articles, switchMode} = this.props;
-    const {listTab} = this.state;
     return (
       <div className="readListWrapper">
         <div className="readListHistoryButtons">

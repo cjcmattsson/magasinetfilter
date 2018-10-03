@@ -7,7 +7,7 @@ class SmallBannerCard extends Component {
 
 
   render() {
-    const {article, markedSaved, switchMode} = this.props;
+    const {article, switchMode} = this.props;
 
     const imageStyle = {
       backgroundImage: `url(${article.fields.image.url})`,

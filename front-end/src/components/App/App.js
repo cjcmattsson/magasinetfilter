@@ -9,11 +9,11 @@ import { Router } from "@reach/router";
 
 class App extends Component {
 
-
   state = {
     articles: false,
     latestArticle: false,
     switchMode: true,
+    scrollingDown: true,
   }
 
 
@@ -43,8 +43,23 @@ class App extends Component {
 
         if (localStorage.getItem("latestArticle")) {
           const articles = JSON.parse(localStorage.getItem('articles'));
-          const latestArticle = articles.find(article => article.ID === parseInt(localStorage.getItem('latestArticle')));
+          const latestArticle = articles.find(article => article.ID === parseInt(localStorage.getItem('latestArticle'), 16));
           this.setState({latestArticle})
+        }
+
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = () => {
+
+          const currentScrollPos = window.pageYOffset;
+          console.log(prevScrollpos/10);
+          console.log(currentScrollPos/10);
+          if (prevScrollpos < currentScrollPos) {
+            this.setState({scrollingDown: false})
+          } else {
+            this.setState({scrollingDown: true})
+          }
+
+          prevScrollpos = currentScrollPos;
         }
     }
     switchMode = () => {
@@ -52,11 +67,11 @@ class App extends Component {
     }
 
   render() {
-    const {articles, latestArticle, switchMode} = this.state;
+    const {articles, latestArticle, switchMode, scrollingDown} = this.state;
 
     return (
       <div className="App" style={{backgroundColor: switchMode ? "#FFF" : "#2C2C2C"}}>
-        <Navbar switchModeChange={this.switchMode} switchMode={this.state.switchMode}/>
+        <Navbar scrollingDown={scrollingDown} switchModeChange={this.switchMode} switchMode={switchMode}/>
         <Router>
           <Landing switchMode={switchMode} articles={articles} latestArticle={latestArticle} path="/" />
           <Archive switchMode={switchMode} articles={articles} path="/arkiv"/>
