@@ -142,6 +142,7 @@ body {
     .bannerCardWrapper a .bannerCard {
       border-radius: 12px;
       box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+      background-color: #FFFFFF;
       position: relative;
       width: 100%;
       height: 112px;
@@ -464,17 +465,18 @@ body {
     justify-content: center;
     flex-direction: column; }
     .articleWrapper .fontSizeChange img {
-      z-index: 50;
+      z-index: 1801;
       position: absolute;
       bottom: 0;
       right: 0; }
     .articleWrapper .fontSizeChange .textChangeButtons {
       position: absolute;
-      z-index: 40;
-      width: 48px;
+      z-index: 1800;
+      width: 49px;
       height: 140px;
       padding: 3px 0 0;
       background-color: #E0AB9B;
+      border: 1px solid black;
       bottom: 5px;
       right: 4px;
       border-radius: 40px;
@@ -531,22 +533,60 @@ body {
         color: #FFFFFF; }
       .articleWrapper .articleHeader .bottomContentArticle div {
         margin-bottom: 24px; }
-  .articleWrapper .articleTextWrapper {
-    padding: 16px; }
-    .articleWrapper .articleTextWrapper .contentCreators, .articleWrapper .articleTextWrapper .listenAndShareIcons {
-      margin-bottom: 12px; }
-    .articleWrapper .articleTextWrapper .listenAndShareIcons {
-      height: 40px;
+  .articleWrapper .articleTextWrapper .contentCreators, .articleWrapper .articleTextWrapper .listenAndShareIcons {
+    margin-bottom: 12px;
+    padding-top: 16px; }
+  .articleWrapper .articleTextWrapper .listenAndShareIcons {
+    padding: 16px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    .articleWrapper .articleTextWrapper .listenAndShareIcons img {
+      height: 32px;
+      width: 32px;
+      margin-right: 24px; }
+  .articleWrapper .articleTextWrapper p {
+    padding: 0 16px;
+    margin: 0; }
+  .articleWrapper .articleTextWrapper .articelMainText {
+    height: 500px;
+    overflow: hidden; }
+  .articleWrapper .articleTextWrapper .payWall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 420px;
+    background-color: #2C2C2C; }
+    .articleWrapper .articleTextWrapper .payWall img {
+      height: 200px; }
+    .articleWrapper .articleTextWrapper .payWall .paywallText {
+      margin: 16px 16px 0; }
+      .articleWrapper .articleTextWrapper .payWall .paywallText h3, .articleWrapper .articleTextWrapper .payWall .paywallText p {
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center; }
+      .articleWrapper .articleTextWrapper .payWall .paywallText h3 {
+        font-size: 30px;
+        margin-bottom: 16px; }
+    .articleWrapper .articleTextWrapper .payWall .paywallButton {
+      margin-top: 24px;
+      text-align: center;
+      width: 220px;
+      padding: 8px;
+      border-radius: 15px; }
+    .articleWrapper .articleTextWrapper .payWall .paywallLogin {
+      margin-top: 16px; }
+  .articleWrapper .afterArticleContent {
+    margin-top: 24px; }
+    .articleWrapper .afterArticleContent .similarReading {
+      box-sizing: border-box;
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; }
-      .articleWrapper .articleTextWrapper .listenAndShareIcons img {
-        height: 32px;
-        width: 32px;
-        margin-right: 12px; }
-    .articleWrapper .articleTextWrapper p {
-      margin: 0; }
+      padding: 0 16px; }
 
 .categoryBox {
   box-sizing: border-box;
@@ -560,3 +600,71 @@ body {
     text-transform: uppercase;
     margin: 7px 6px 6px;
     font-family: DinAlternateBold; }
+
+.subscribeCardWrapper {
+  width: auto;
+  height: auto;
+  padding: 0 16px; }
+  .subscribeCardWrapper a {
+    text-decoration: none; }
+    .subscribeCardWrapper a .subscribeCard {
+      border-radius: 12px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+      background-color: #FFFFFF;
+      position: relative;
+      width: 100%;
+      height: 112px;
+      display: flex;
+      flex-direction: row; }
+      .subscribeCardWrapper a .subscribeCard .imageHere {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        height: 100%;
+        width: 112px; }
+      .subscribeCardWrapper a .subscribeCard .textContentKeepReading {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        flex: 1;
+        padding-top: 2px; }
+        .subscribeCardWrapper a .subscribeCard .textContentKeepReading p {
+          font-size: 14px;
+          margin-top: 16px;
+          margin-left: 8px; }
+        .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe {
+          box-sizing: border-box;
+          padding: 0 0 3px; }
+          .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe h2, .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe p {
+            margin: 0;
+            margin-left: 8px;
+            margin-bottom: 4px; }
+          .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe h2 {
+            font-family: HarrietDisplayMedium;
+            font-size: 18px;
+            max-width: 80%; }
+        .subscribeCardWrapper a .subscribeCard .textContentKeepReading p {
+          font-family: PfDinMedium; }
+        .subscribeCardWrapper a .subscribeCard .textContentKeepReading p:nth-child(3) {
+          font-size: 12px; }
+        .subscribeCardWrapper a .subscribeCard .textContentKeepReading .progressBarKeepReading {
+          height: 12px;
+          width: 100%;
+          background-color: #ECECEC;
+          border-bottom-right-radius: 12px; }
+          .subscribeCardWrapper a .subscribeCard .textContentKeepReading .progressBarKeepReading .progress {
+            background-color: #E0AB9B;
+            height: 100%; }
+      .subscribeCardWrapper a .subscribeCard .closeKeepReading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 38px;
+        height: 38px; }
+        .subscribeCardWrapper a .subscribeCard .closeKeepReading img {
+          width: 16px;
+          height: 16px; }

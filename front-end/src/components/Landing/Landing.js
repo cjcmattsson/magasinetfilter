@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "@reach/router";
 import BannerCard from '../BannerCard/BannerCard';
+import SubscribeCard from '../SubscribeCard/SubscribeCard';
 import LargeCard from '../LargeCard/LargeCard';
 import SmallBannerCard from '../SmallBannerCard/SmallBannerCard';
 import SmallCard from '../SmallCard/SmallCard';
@@ -35,13 +36,13 @@ componentDidMount() {
 }
 
   render() {
-    const {articles} = this.props;
+    const {articles, switchMode} = this.props;
     const {latestArticle} = this.state;
 
     return (
       <div className="landingWrapper">
-        {latestArticle && <BannerCard latestArticle={this.state.latestArticle}/>}
-        <h2 className="headerRecommended">Rekommenderad läsning för dig</h2>
+        {latestArticle ? <BannerCard latestArticle={this.state.latestArticle}/> : <SubscribeCard />}
+        <h2 className="headerRecommended" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Rekommenderad läsning för dig</h2>
         <div className="landingLargeCardContainer">
           {articles && articles.map(article =>
             <LargeCard key={article.ID} article={article} />)}
@@ -52,12 +53,12 @@ componentDidMount() {
             </div>
         </div>
         <div className="mostReadArticlesContainer">
-          <h2 className="mostReadArticles">Mest lästa</h2>
+          <h2 className="mostReadArticles" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Mest lästa</h2>
           {articles && articles.map(article =>
-            <SmallBannerCard markedSaved={false} key={article.ID} article={article} />)}
+            <SmallBannerCard markedSaved={false} switchMode={switchMode} key={article.ID} article={article} />)}
         </div>
         <div className="landingSmallCardContainer">
-          <h2 className="headerRecommended">Senast släppta artiklar</h2>
+          <h2 className="headerRecommended" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Senast släppta artiklar</h2>
           {articles && articles.map(article =>
             <SmallCard key={article.ID} article={article} />)}
         </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SocialMediaLogos from '../SocialMediaLogos/SocialMediaLogos';
 import { Link } from '@reach/router';
 
 class DropDownMenu extends Component {
@@ -25,7 +24,6 @@ class DropDownMenu extends Component {
             <li><p>Hjälp</p> <img src={require('../../assets/icons/arrow_dark.svg')} alt=""/> </li>
             <li><p>Logga ut</p> <img src={require('../../assets/icons/arrow_dark.svg')} alt=""/> </li>
           </ul>
-          <SocialMediaLogos/>
         </div>
       </div>
     )

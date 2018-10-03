@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CategoryBox from '../CategoryBox/CategoryBox';
 import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
+import SubscribeCard from '../SubscribeCard/SubscribeCard';
+import SmallBannerCard from '../SmallBannerCard/SmallBannerCard';
 class Article extends Component {
 
 state = {
@@ -58,6 +60,7 @@ onScroll = () => {
 
   render() {
     const {article, saveArticle} = this.state;
+    const {articles, switchMode} = this.props;
 
     const imageStyle = {
       backgroundImage: article && `url(${article.fields.image.url})`,
@@ -95,16 +98,45 @@ onScroll = () => {
             </div>
             <div className="articleTextWrapper">
               <div className="contentCreators">
-                <p>TEXT {article.fields.author} FOTO {article.fields.author}</p>
+                <p style={{color: switchMode ? "#000000" : "#FFFFFF"}} >TEXT {article.fields.author} FOTO {article.fields.author}</p>
               </div>
 
               <div className="listenAndShareIcons">
-                <img src={require('../../assets/icons/sound_dark.svg')} alt=""/>
-                <img src={require('../../assets/icons/share_dark.svg')} alt=""/>
+                <img src={switchMode ? require('../../assets/icons/sound_dark.svg') : require('../../assets/icons/sound_white.svg')} alt=""/>
+                <img src={switchMode ? require('../../assets/icons/share_dark.svg') : require('../../assets/icons/share_white.svg')} alt=""/>
               </div>
-              <p style={fontSize}>{article.fields.text}</p>
+              <div className="articelMainText" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>
+                <p style={fontSize}>{article.fields.text}</p>
+              </div>
+              <div className="payWall" style={{backgroundColor: switchMode ? "#2C2C2C" :"#E0AB9B" }}>
+                <img src={switchMode ? require('../../assets/icons/kaffesmoke_black.gif') : require('../../assets/icons/kaffesmokepink.gif')} alt=""/>
+                <div className="paywallText">
+                  <h3>Unna dig en go stund!</h3>
+                  <p>Vi är stolta över våra berättelser & vill att även du ska på uppleva varför 100 000 läsare väljer Filter</p>
+                </div>
+                <div className="paywallButton"
+                  style={{
+                    backgroundColor: switchMode ? "#E0AB9B": "#2C2C2C",
+                    color: switchMode ? "#2C2C2C": "#FFFFFF"
+                  }}>
+                  Fortsätt läsa en artikel gratis!
+                </div>
+                <p className="paywallLogin"
+                  style={{color: switchMode ? "#FFFFFF": "#2C2C2C"}}>
+                  Är du redan medlem? <span style={{color: switchMode ? "#E0AB9B": "#2C2C2C"}}> Logga in</span>
+              </p>
+              </div>
             </div>
-          </div>}
+            <div className="afterArticleContent">
+              <SubscribeCard/>
+              <div className="similarReading">
+                <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Liknande läsning</h2>
+                {articles && articles.map(article =>
+                  <SmallBannerCard markedSaved={false} switchMode={switchMode} key={article.ID} article={article} />)}
+                </div>
+            </div>
+          </div>
+        }
           <div className="fontSizeChange">
             <img onClick={this.activateFontChange} src={require('../../assets/icons/textsize_unactive.svg')} alt=""/>
             <div className="textChangeButtons" style={{display: this.state.fontChange ? "block" : "none"}}>

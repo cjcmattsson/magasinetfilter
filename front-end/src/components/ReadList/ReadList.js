@@ -31,7 +31,7 @@ class ReadList extends Component {
 
   render() {
 
-    const {articles} = this.props;
+    const {articles, switchMode} = this.props;
     const {listTab} = this.state;
     return (
       <div className="readListWrapper">
@@ -40,7 +40,7 @@ class ReadList extends Component {
           <div onClick={this.historyTab} className="historyButton" style={{backgroundColor: this.state.historyTab ? "#E0AB9B" : ""}}>Historik</div>
         </div>
         {articles && articles.map(article =>
-          <SmallBannerCard markedSaved={true} key={article.ID} article={article} />)}
+          <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
       </div>
     )
   }

@@ -7,7 +7,7 @@ class SmallBannerCard extends Component {
 
 
   render() {
-    const {article, markedSaved} = this.props;
+    const {article, markedSaved, switchMode} = this.props;
 
     const imageStyle = {
       backgroundImage: `url(${article.fields.image.url})`,
@@ -22,8 +22,8 @@ class SmallBannerCard extends Component {
             <Link to={`/article/${article.ID}`}>
             <div className="smallCardImage" style={imageStyle}></div>
             <div className="smallCardText">
-              <h2>{article.fields.title}</h2>
-              <p>5 min läsning</p>
+              <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>{article.fields.title}</h2>
+              <p style={{color: switchMode ? "#000000" : "#FFFFFF"}}>5 min läsning</p>
             </div>
           </Link>
             <div className="smallCardSave">

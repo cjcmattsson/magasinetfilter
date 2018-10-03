@@ -16,9 +16,7 @@ class App extends Component {
     switchMode: true,
   }
 
-  componentDidUpdate () {
-    window.scrollTo(0, 0);
-  }
+
 
   componentDidMount() {
     if (localStorage.getItem('articles')) {
@@ -57,13 +55,13 @@ class App extends Component {
     const {articles, latestArticle, switchMode} = this.state;
 
     return (
-      <div className="App" style={{backgroundColor: switchMode ? "#FFF" : "#000"}}>
+      <div className="App" style={{backgroundColor: switchMode ? "#FFF" : "#2C2C2C"}}>
         <Navbar switchModeChange={this.switchMode} switchMode={this.state.switchMode}/>
         <Router>
-          <Landing articles={articles} latestArticle={latestArticle} path="/" />
-          <Archive articles={articles} path="/arkiv"/>
-          <ReadList articles={articles} path="/laslista" />
-          <Article articles={articles} latestArticle={latestArticle} path="/article/:articleId" />
+          <Landing switchMode={switchMode} articles={articles} latestArticle={latestArticle} path="/" />
+          <Archive switchMode={switchMode} articles={articles} path="/arkiv"/>
+          <ReadList switchMode={switchMode} articles={articles} path="/laslista" />
+          <Article switchMode={switchMode} articles={articles} latestArticle={latestArticle} path="/article/:articleId" />
         </Router>
         <Footer/>
       </div>
