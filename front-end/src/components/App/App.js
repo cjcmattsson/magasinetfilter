@@ -70,7 +70,9 @@ class App extends Component {
     const {articles, latestArticle, switchMode, scrollingDown} = this.state;
 
     return (
-      <div className="App" style={{backgroundColor: switchMode ? "#FFF" : "#2C2C2C"}}>
+      <div className="App" style={{
+          backgroundColor: switchMode ? "#FFF" : "#2C2C2C",
+        }}>
         <Navbar scrollingDown={scrollingDown} switchModeChange={this.switchMode} switchMode={switchMode}/>
         <Router>
           <Landing switchMode={switchMode} articles={articles} latestArticle={latestArticle} path="/" />

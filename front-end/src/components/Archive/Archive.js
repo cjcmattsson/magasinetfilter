@@ -17,6 +17,10 @@ class Archive extends Component {
       }
     }
 
+    componentDidMount() {
+      window.scroll(0, 0);
+    }
+
   render() {
     const {articles} = this.props;
 

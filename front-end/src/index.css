@@ -236,7 +236,8 @@ body {
       height: 280px;
       flex-direction: column;
       justify-content: flex-end;
-      position: relative; }
+      position: relative;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
       .largeCardWrapper a .largeCardContent .contentText {
         height: 40%;
         display: flex;
@@ -360,7 +361,8 @@ body {
       padding: 10px;
       height: 160px;
       display: flex;
-      align-items: flex-end; }
+      align-items: flex-end;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
       .smallCardWrapper a .smallCardContent .bottomText {
         color: #FFFFFF; }
         .smallCardWrapper a .smallCardContent .bottomText h2, .smallCardWrapper a .smallCardContent .bottomText p {
@@ -558,7 +560,6 @@ body {
     height: 150px;
     width: 100%;
     margin-top: -150px;
-    z-index: 100;
     position: relative; }
   .articleWrapper .articleTextWrapper .payWall {
     border: 1px solid #2C2C2C;
