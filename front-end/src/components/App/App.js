@@ -58,7 +58,6 @@ class App extends Component {
           } else {
             this.setState({scrollingDown: true})
           }
-
           prevScrollpos = currentScrollPos;
         }
     }

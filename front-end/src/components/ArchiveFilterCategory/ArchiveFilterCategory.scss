@@ -1,0 +1,23 @@
+.filterCategory {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+
+
+  p {
+    margin: 0;
+    font-family: DinAlternateBold;
+    font-size: 16px;
+  }
+
+  
+}
+@media screen and (max-width: 321px) {
+  .filterCategory {
+    width: 125px;
+    margin-bottom: 6px;
+  }
+}

@@ -1,0 +1,17 @@
+.sortingCategory {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-between;
+  border-bottom: 1px solid $white;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 16px;
+
+  p {
+    margin: 0;
+    font-family: DinAlternateBold;
+    font-size: 16px;
+  }
+}

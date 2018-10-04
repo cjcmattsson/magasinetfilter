@@ -12,7 +12,7 @@ class Navbar extends Component {
 
   openDropDown = () => {
     this.setState({dropDownMenu: !this.state.dropDownMenu});
-    if (this.state.dropDownMenu == false) {
+    if (this.state.dropDownMenu === false) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
@@ -24,7 +24,7 @@ componentDidMount() {
 }
 
 scrollTop = () => {
-  window.scroll(0, 0);
+  window.scrollTo(0, 0);
 }
 
   render() {

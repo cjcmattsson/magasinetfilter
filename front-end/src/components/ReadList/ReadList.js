@@ -26,6 +26,8 @@ class ReadList extends Component {
         </div>
         {articles && articles.map(article =>
           <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
+        {articles && articles.map(article =>
+          <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
       </div>
     )
   }

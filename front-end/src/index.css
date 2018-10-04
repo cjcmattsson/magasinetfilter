@@ -373,8 +373,6 @@ body {
           font-size: 12px; }
 
 .readListWrapper {
-  box-sizing: border-box;
-  width: 100vw;
   padding: 16px 16px 0; }
   .readListWrapper .readListHistoryButtons {
     width: 100%;
@@ -398,17 +396,12 @@ body {
   box-sizing: border-box;
   width: 100vw;
   padding: 16px 16px 0; }
-  .archiveWrapper .archiveCards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between; }
   .archiveWrapper .searchFieldWrapper {
     width: 100%;
-    height: 32px;
+    height: 40px;
     box-sizing: border-box;
     background-color: #ECECEC;
-    border-radius: 15px;
+    border-radius: 16px;
     margin-bottom: 18px;
     display: flex;
     flex-direction: row;
@@ -416,22 +409,25 @@ body {
     justify-content: flex-end;
     padding: 0 4px 0 45px; }
     .archiveWrapper .searchFieldWrapper .searchFieldInput {
+      background-color: #ECECEC;
       box-sizing: border-box;
       padding-left: 10px;
       border-radius: 12px;
       border: none;
-      height: 24px;
-      width: 100%; }
+      height: 32px;
+      width: 100%;
+      font-size: 16px; }
     .archiveWrapper .searchFieldWrapper .searchFieldInput:active, .archiveWrapper .searchFieldWrapper .searchFieldInput:focus {
       outline: none; }
   .archiveWrapper .sortAndFilterFields {
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 18px; }
     .archiveWrapper .sortAndFilterFields .sortByField, .archiveWrapper .sortAndFilterFields .filterByField {
-      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.5);
       background-color: #ECECEC;
       height: 32px;
       width: 48%;
@@ -442,9 +438,111 @@ body {
       align-items: center;
       padding: 0 15px; }
       .archiveWrapper .sortAndFilterFields .sortByField p, .archiveWrapper .sortAndFilterFields .filterByField p {
-        margin: 0; }
+        margin: 0;
+        font-family: DinAlternateBold; }
       .archiveWrapper .sortAndFilterFields .sortByField img, .archiveWrapper .sortAndFilterFields .filterByField img {
         transform: rotate(90deg); }
+    .archiveWrapper .sortAndFilterFields .openSortByFieldWrapper {
+      font-family: DinAlternateBold;
+      width: 48%; }
+      .archiveWrapper .sortAndFilterFields .openSortByFieldWrapper .openSortByFieldButton {
+        background-color: #E0AB9B;
+        height: 32px;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px; }
+      .archiveWrapper .sortAndFilterFields .openSortByFieldWrapper .sortByFieldBoxWrapper {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 16px;
+        left: 0;
+        height: 100vh;
+        position: absolute; }
+        .archiveWrapper .sortAndFilterFields .openSortByFieldWrapper .sortByFieldBoxWrapper .sortByFieldBox {
+          z-index: 15;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          height: 75%;
+          background-color: #E0AB9B;
+          border-radius: 0 0 15px 15px;
+          transform: translateY(-1px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; }
+    .archiveWrapper .sortAndFilterFields .openFilterWrapper {
+      font-family: DinAlternateBold;
+      width: 48%; }
+      .archiveWrapper .sortAndFilterFields .openFilterWrapper .openFilterButton {
+        background-color: #E0AB9B;
+        height: 32px;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px; }
+      .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 16px;
+        left: 0;
+        height: 100vh;
+        position: absolute; }
+        .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox {
+          z-index: 15;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 16px;
+          height: 75%;
+          background-color: #E0AB9B;
+          border-radius: 0 0 15px 15px;
+          transform: translateY(-1px); }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox h3 {
+            font-size: 16px;
+            margin: 0;
+            margin-bottom: 20px; }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength, .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterCategoryList {
+            border-bottom: 1px solid #FFFFFF;
+            margin-bottom: 16px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterCategoryList {
+            flex-wrap: wrap; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterCategoryList .filterCategory {
+              width: 155px; }
+              .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterCategoryList .filterCategory img {
+                margin-right: 18px; }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength {
+            flex-direction: column; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength img {
+              margin-right: 16px; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength img:nth-child(2) {
+              width: 16px;
+              height: 16px; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength .filterCategory:nth-child(1) img:nth-child(2) {
+              transform: rotate(180deg); }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundArticle img {
+            margin-right: 16px; }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundArticle .filterCategory p {
+            width: auto; }
+          @media screen and (max-width: 321px) {
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox h3 {
+              margin-bottom: 8px; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterCategoryList {
+              margin-bottom: 8px; } }
+  .archiveWrapper .archiveCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
 
 .socialMediaLogos {
   margin: 0 auto;
@@ -529,7 +627,9 @@ body {
       padding: 16px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; }
+      justify-content: flex-end;
+      height: 55vh;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
       .articleWrapper .articleHeader .bottomContentArticle h2, .articleWrapper .articleHeader .bottomContentArticle h3, .articleWrapper .articleHeader .bottomContentArticle p {
         font-family: DinAlternateBold;
         margin: 0;
@@ -679,3 +779,35 @@ body {
         .subscribeCardWrapper a .subscribeCard .closeKeepReading img {
           width: 16px;
           height: 16px; }
+
+.filterCategory {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 15px; }
+  .filterCategory p {
+    margin: 0;
+    font-family: DinAlternateBold;
+    font-size: 16px; }
+
+@media screen and (max-width: 321px) {
+  .filterCategory {
+    width: 125px;
+    margin-bottom: 6px; } }
+
+.sortingCategory {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-between;
+  border-bottom: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 16px; }
+  .sortingCategory p {
+    margin: 0;
+    font-family: DinAlternateBold;
+    font-size: 16px; }
