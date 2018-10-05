@@ -10,7 +10,31 @@ class Archive extends Component {
   state = {
     sort: false,
     filter: false,
+    latestArticle: false,
   }
+
+  componentWillReceiveProps () {
+      let element = this;
+      if (element != null) {
+        this.scrollPosition = window.scrollY
+      }
+    }
+
+    componentDidUpdate () {
+      let element = this;
+      if (element != null) {
+        window.scrollTo(0, this.scrollPosition)
+      }
+    }
+
+    componentDidMount() {
+      if (localStorage.getItem('latestArticle')) {
+        const latestArticle = JSON.parse(localStorage.getItem('latestArticle'));
+        this.setState({latestArticle})
+      } else {
+        this.setState({latestArticle : false,})
+      }
+    }
 
     showSort = () => {
       this.setState({sort: !this.state.sort, filter: false});

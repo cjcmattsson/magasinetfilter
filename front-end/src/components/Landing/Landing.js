@@ -13,14 +13,14 @@ class Landing extends Component {
   }
 
   componentWillReceiveProps () {
-      const element = this;
+      let element = this;
       if (element != null) {
         this.scrollPosition = window.scrollY
       }
     }
 
     componentDidUpdate () {
-      const element = this;
+      let element = this;
       if (element != null) {
         window.scrollTo(0, this.scrollPosition)
       }

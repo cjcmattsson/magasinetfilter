@@ -7,6 +7,28 @@ class ReadList extends Component {
     listTab: true,
     historyTab: false,
   }
+  componentWillReceiveProps () {
+      let element = this;
+      if (element != null) {
+        this.scrollPosition = window.scrollY
+      }
+    }
+
+    componentDidUpdate () {
+      let element = this;
+      if (element != null) {
+        window.scrollTo(0, this.scrollPosition)
+      }
+    }
+    
+  componentDidMount() {
+    if (localStorage.getItem('latestArticle')) {
+      const latestArticle = JSON.parse(localStorage.getItem('latestArticle'));
+      this.setState({latestArticle})
+    } else {
+      this.setState({latestArticle : false,})
+    }
+  }
 
     listTab = () => {
       this.setState({listTab: true, historyTab: false})
