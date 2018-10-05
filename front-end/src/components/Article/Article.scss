@@ -99,11 +99,24 @@
       height: 55vh;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.60));
       h2, h3, p {
-        font-family: DinAlternateBold;
         margin: 0;
         color: $white;
       }
-
+      h2 {
+        font-family: HarrietDisplayLight;
+        font-size: 24px;
+        letter-spacing: 0.8px;
+      }
+      h3 {
+        font-size: 14px;
+        font-family: DinAlternateBold;
+      }
+      p {
+        font-family: PfDinPro;
+        font-size: 12px;
+        margin: 0;
+        color: $white;
+      }
       div {
         margin-bottom: 24px;
       }
@@ -113,6 +126,11 @@
     .contentCreators, .listenAndShareIcons {
       margin-bottom: 12px;
       padding-top: 16px;
+    }
+
+    .contentCreators {
+      font-size: 12px;
+      font-family: PfDinPro;
     }
 
     .listenAndShareIcons {
@@ -134,8 +152,8 @@
     }
 
   .articelMainText {
-    height: 500px;
-    overflow: hidden;
+    transition: all 1s ease;
+    font-family: HarrietDisplayLight;
   }
 
   .overlay {

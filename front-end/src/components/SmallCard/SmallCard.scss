@@ -32,11 +32,15 @@
       .bottomText {
         color: $white;
 
-        h2, p {margin: 0;}
+        h2, p {
+          margin: 0;
+        }
         h2 {
+          font-family: DinAlternateBold;
           font-size: 14px;
         }
         p {
+          font-family: DinPfPro;
           font-size: 12px;
         }
       }

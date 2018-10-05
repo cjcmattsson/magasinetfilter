@@ -16,8 +16,6 @@ class App extends Component {
     scrollingDown: true,
   }
 
-
-
   componentDidMount() {
     if (localStorage.getItem('articles')) {
       const articles = JSON.parse(localStorage.getItem('articles'));
@@ -29,9 +27,11 @@ class App extends Component {
             (result) => {
               this.setState({
                 articles: result,
-              });
+              })
               localStorage.setItem('articles', JSON.stringify(result));
-              console.log(result);
+              result.forEach(article => {
+                localStorage.setItem(article.ID, JSON.stringify(article));
+              });
             },
             (error) => {
               this.setState({
@@ -47,12 +47,10 @@ class App extends Component {
           this.setState({latestArticle})
         }
 
+
         let prevScrollpos = window.pageYOffset;
         window.onscroll = () => {
-
           const currentScrollPos = window.pageYOffset;
-          console.log(prevScrollpos/10);
-          console.log(currentScrollPos/10);
           if (prevScrollpos < currentScrollPos) {
             this.setState({scrollingDown: false})
           } else {
@@ -60,6 +58,7 @@ class App extends Component {
           }
           prevScrollpos = currentScrollPos;
         }
+
     }
     switchMode = () => {
       this.setState({switchMode: !this.state.switchMode});

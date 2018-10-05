@@ -3,6 +3,7 @@ import CategoryBox from '../CategoryBox/CategoryBox';
 import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
 import SubscribeCard from '../SubscribeCard/SubscribeCard';
 import SmallBannerCard from '../SmallBannerCard/SmallBannerCard';
+import Paywall from '../Paywall/Paywall';
 class Article extends Component {
 
 state = {
@@ -10,6 +11,7 @@ state = {
   scrollPercentage: 0,
   fontChange: false,
   fontSize: 20,
+  paywallUp: true,
 }
 
 onScroll = () => {
@@ -18,8 +20,12 @@ onScroll = () => {
         localStorage.setItem('scrollLatest', Math.floor(n * 100));
 }
 
+
   componentDidMount() {
-    fetch(`http://localhost:8888/wp-json/myplugin/v2/article/${this.props.articleId}`)
+      const thisArticle = JSON.parse(localStorage.getItem(this.props.articleId));
+      this.setState({article: thisArticle})
+      console.log(thisArticle);
+      fetch(`http://localhost:8888/wp-json/myplugin/v2/article/${this.props.articleId}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -34,6 +40,7 @@ onScroll = () => {
           });
         }
       )
+
       localStorage.setItem('keepReading', JSON.stringify(this.props.articleId));
       window.addEventListener('scroll', this.onScroll);
     }
@@ -57,8 +64,17 @@ onScroll = () => {
       this.setState({fontSize: this.state.fontSize - 2})
     }
 
+    getOneFreeArticle = () => {
+      this.setState({paywallUp: true})
+    }
+
+    paywallUp = () => {
+      this.setState({paywallUp: false})
+      localStorage.setItem('freeArticle', 1);
+    }
+
   render() {
-    const {article} = this.state;
+    const {article, paywallUp} = this.state;
     const {articles, switchMode} = this.props;
 
     const imageStyle = {
@@ -97,42 +113,30 @@ onScroll = () => {
             </div>
             <div className="articleTextWrapper">
               <div className="contentCreators">
-                <p style={{color: switchMode ? "#000000" : "#FFFFFF"}} >TEXT {article.fields.author} FOTO {article.fields.author}</p>
+                <p style={{color: switchMode ? "#000000" : "#FFFFFF"}} >TEXT {article.fields.author} FOTO {article.fields.photographer}</p>
               </div>
 
               <div className="listenAndShareIcons">
                 <img src={switchMode ? require('../../assets/icons/sound_dark.svg') : require('../../assets/icons/sound_white.svg')} alt=""/>
                 <img src={switchMode ? require('../../assets/icons/share_dark.svg') : require('../../assets/icons/share_white.svg')} alt=""/>
               </div>
-              <div className="articelMainText" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>
+              <div className="articelMainText" style={{
+                  color: switchMode ? "#000000" : "#FFFFFF",
+                  height: paywallUp ? "500px" : "auto",
+                  overflow: paywallUp ? "hidden" : "visible",
+                }}>
                 <p style={fontSize}>{article.fields.text}</p>
               </div>
-              <div className="overlay" style={{background: switchMode ? "linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255))" : "linear-gradient(rgba(45, 45, 45, 0), rgb(45, 45, 45))"}}></div>
-              <div className="payWall" style={{backgroundColor: switchMode ? "#2C2C2C" :"#E0AB9B" }}>
-                <img src={switchMode ? require('../../assets/icons/kaffesmoke_black.gif') : require('../../assets/icons/kaffesmokepink.gif')} alt=""/>
-                <div className="paywallText">
-                  <h3>Unna dig en go stund!</h3>
-                  <p>Vi är stolta över våra berättelser & vill att även du ska få uppleva varför 100 000 läsare väljer Filter</p>
-                </div>
-                <div className="paywallButton"
-                  style={{
-                    backgroundColor: switchMode ? "#E0AB9B": "#2C2C2C",
-                    color: switchMode ? "#2C2C2C": "#FFFFFF"
-                  }}>
-                  Fortsätt läsa en artikel gratis!
-                </div>
-                <p className="paywallLogin">
-                  Är du redan medlem? <span style={{color: switchMode ? "#E0AB9B": "#2C2C2C"}}> Logga in</span>
-              </p>
-              </div>
+              {paywallUp && <div className="overlay" style={{background: switchMode ? "linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255))" : "linear-gradient(rgba(45, 45, 45, 0), rgb(45, 45, 45))"}}></div>}
+              {paywallUp && <Paywall switchMode={switchMode} paywallUp={this.paywallUp}/>}
             </div>
             <div className="afterArticleContent">
               <SubscribeCard/>
               <div className="similarReading">
                 <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Liknande läsning</h2>
-                {articles && articles.map(article =>
-                  <SmallBannerCard markedSaved={false} switchMode={switchMode} key={article.ID} article={article} />)}
-                </div>
+                  {articles && articles.map(article =>
+                    <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
+              </div>
             </div>
           </div>
         }

@@ -4,8 +4,6 @@ import CategoryBox from '../CategoryBox/CategoryBox';
 import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
 
 class LargeCard extends Component {
-
-
   render() {
 
     const {article} = this.props;
