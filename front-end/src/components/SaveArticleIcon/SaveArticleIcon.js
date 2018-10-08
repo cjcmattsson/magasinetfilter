@@ -11,6 +11,8 @@ class SaveArticleIcon extends Component {
   }
 
   render() {
+
+    const {markedSaved} = this.props;
     return (
         <div className="saveArticleIcon" onClick={this.saveArticle}>
             <img onClick={this.saveArticle} src={this.state.saveArticle ? require('../../assets/icons/icon_pink_saved.svg') : require('../../assets/icons/icon_pink_save.svg')} alt=""/>

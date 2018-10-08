@@ -14,7 +14,19 @@ class App extends Component {
     latestArticle: false,
     switchMode: true,
     scrollingDown: true,
+    showFooter: true,
   }
+
+
+/*  checkUrl = () => {
+    const href = window.location.pathname;
+    if (href.includes("article")) {
+      this.setState({showFooter:false})
+      console.log(window.location.pathname);
+    } else {
+      this.setState({showFooter:true})
+    }
+  }*/
 
   componentDidMount() {
     if (localStorage.getItem('articles')) {
@@ -65,7 +77,7 @@ class App extends Component {
     }
 
   render() {
-    const {articles, latestArticle, switchMode, scrollingDown} = this.state;
+    const {articles, latestArticle, switchMode, scrollingDown, showFooter} = this.state;
 
     return (
       <div className="App" style={{
@@ -78,7 +90,7 @@ class App extends Component {
           <ReadList switchMode={switchMode} articles={articles} path="/laslista" />
           <Article switchMode={switchMode} articles={articles} latestArticle={latestArticle} path="/article/:articleId" />
         </Router>
-        <Footer/>
+        {showFooter ? <Footer/> : ""}
       </div>
     );
   }

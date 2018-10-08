@@ -30,7 +30,7 @@ class SmallBannerCard extends Component {
             </div>
           </Link>
             <div className="smallCardSave">
-              <SaveArticleIcon />
+              <SaveArticleIcon markedSaved={true} />
             </div>
           </div>
       </div>

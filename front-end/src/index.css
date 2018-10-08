@@ -435,13 +435,33 @@ body {
   box-sizing: border-box;
   width: 100vw;
   padding: 16px 16px 0; }
+  .archiveWrapper .chosenFilters {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 0 16px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .archiveWrapper .chosenFilters p {
+      font-family: DinAlternateBold;
+      margin: 0;
+      margin-bottom: 0px; }
+    .archiveWrapper .chosenFilters .filterList {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row; }
   .archiveWrapper .sortAndFilterFields {
     box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 18px; }
+    margin-bottom: 16px; }
     .archiveWrapper .sortAndFilterFields .sortByField, .archiveWrapper .sortAndFilterFields .filterByField {
       color: rgba(0, 0, 0, 0.5);
       background-color: #ECECEC;
@@ -857,7 +877,7 @@ body {
   background-color: #ECECEC; }
   .leftToReadBar .progressBar {
     border-radius: 12px 0 0 12px;
-    width: 29px;
+    width: 2px;
     background-color: #E0AB9B;
     height: 8px; }
 
@@ -927,3 +947,24 @@ body {
     font-size: 16px; }
   .searchFieldWrapper .searchFieldInput:active, .searchFieldWrapper .searchFieldInput:focus {
     outline: none; }
+
+.filterCategoryBox {
+  box-sizing: border-box;
+  height: 24px;
+  background-color: #E0AB9B;
+  border-radius: 25px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5px 2.5px; }
+  .filterCategoryBox p {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 7px 6px 6px;
+    letter-spacing: 0.75px;
+    font-family: DinAlternateBold; }
+  .filterCategoryBox img {
+    margin-left: 10px;
+    height: 12px;
+    width: 12px; }

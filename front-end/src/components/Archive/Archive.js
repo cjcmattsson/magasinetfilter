@@ -4,6 +4,7 @@ import ArchiveFilterCategory from '../ArchiveFilterCategory/ArchiveFilterCategor
 import filterCategoryList from '../helpers/filterCategoryList';
 import ArchiveSortingCategory from '../ArchiveSortingCategory/ArchiveSortingCategory';
 import SearchBar from '../SearchBar/SearchBar';
+import FilterCategoryBox from '../FilterCategoryBox/FilterCategoryBox';
 import sortingCategoryList from '../helpers/sortingCategoryList.js';
 
 class Archive extends Component {
@@ -13,6 +14,7 @@ class Archive extends Component {
     filter: false,
     latestArticle: false,
     sortCategory: false,
+    chosenFilters: [],
   }
 
   componentWillReceiveProps () {
@@ -46,8 +48,8 @@ class Archive extends Component {
     }
 
   render() {
-    const {sort, filter, sortCategory} = this.state;
-    const {articles} = this.props;
+    const {sort, filter, sortCategory, chosenFilters} = this.state;
+    const {articles, switchMode} = this.props;
 
     return (
       <div className="archiveWrapper">
@@ -83,7 +85,12 @@ class Archive extends Component {
                   <h3>Kategorier</h3>
                   <div className="filterCategoryList">
                     {filterCategoryList && filterCategoryList.map((category, key) => {
-                      return <ArchiveFilterCategory key={key} category={category.text}/>
+                      return <div key={key} onClick={() => {
+                          this.state.chosenFilters.push(category.text)
+                          console.log(this.state.chosenFilters);
+                        }}>
+                        <ArchiveFilterCategory category={category.text}/>
+                      </div>
                     })}
                   </div>
                   <h3>Välj läslängd</h3>
@@ -104,6 +111,14 @@ class Archive extends Component {
             </div>
         }
         </div>
+        {!!chosenFilters.length &&
+          <div className="chosenFilters">
+            <p style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Valda filter</p>
+            <div className="filterList">
+              {chosenFilters && chosenFilters.map((filter, key) =>
+                <FilterCategoryBox key={key} filterCategory={filter} />)}
+            </div>
+        </div>}
         <div className="archiveCards">
           {articles && articles.map(article =>
             <SmallCard key={article.ID} article={article} />)}

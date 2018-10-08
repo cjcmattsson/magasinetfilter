@@ -1,0 +1,25 @@
+.filterCategoryBox {
+  box-sizing: border-box;
+  height: 24px;
+  background-color: $pink;
+  border-radius: 25px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5px 2.5px;
+
+  p {
+    color: $white;
+    font-size: 14px;
+    margin: 7px 6px 6px;
+    letter-spacing: 0.75px;
+    font-family: DinAlternateBold;
+  }
+
+  img {
+    margin-left: 10px;
+    height: 12px;
+    width: 12px;
+  }
+}
