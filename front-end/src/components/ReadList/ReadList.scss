@@ -9,13 +9,14 @@
     margin-bottom: 18px;
 
     .readListButton, .historyButton {
+      font-family: DinAlternateBold;
       box-sizing: border-box;
       background-color: $grey;
       height: 32px;
       width: 48%;
       border-radius: 15px;
       display: flex;
-      flex-direction: row;
+      flex-direction: center;
       justify-content: space-between;
       align-items: center;
       padding: 0 15px;

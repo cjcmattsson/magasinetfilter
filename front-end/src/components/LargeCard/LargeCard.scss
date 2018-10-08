@@ -3,7 +3,7 @@
   width: 80vw;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.50);
   margin-right: 16px;
   margin-bottom: 16px;
   height: 350px;
@@ -51,29 +51,33 @@
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.60));
 
         .contentText {
-          height: 40%;
           display: flex;
           flex-direction: column;
-          height: 100px;
-          justify-content: space-between;
+          justify-content: flex-end;
 
-          .topContent {
-            h2 {
-              font-family: HarrietDisplayMedium;
-              color: white;
+          h2 {
+            font-family: HarrietDisplayMedium;
+            color: white;
+            margin: 0;
+          }
+
+          .bottomContent {
+            height: 80px;
+
+            .timeOfRead, .ingress {
               margin: 0;
             }
 
-            p {
+            .timeOfRead {
+              margin: 4px 0 8px;
               font-size: 12px;
               font-family: PfDinPro;
             }
-          }
-
-          p {
-            font-family: PfDinMedium;
-            font-size: 14px;
-            margin: 0;
+            .ingress {
+              font-family: DinAlternateBold;
+              font-size: 14px;
+              line-height: 20px;
+            }
           }
         }
 

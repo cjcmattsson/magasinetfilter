@@ -27,11 +27,11 @@ class LargeCard extends Component {
         <Link className="Link" to={`/article/${article.ID}`}>
           <div className="largeCardContent" >
             <div className="contentText">
-              <div className="topContent">
-                <h2>{article.fields.title}</h2>
-                <p>20 minuters läsning</p>
+              <h2>{article.fields.title}</h2>
+              <div className="bottomContent">
+                <p className="timeOfRead">20 minuters läsning</p>
+                <p className="ingress">{article.fields.ingress}</p>
               </div>
-              <p>{article.fields.ingress}</p>
             </div>
           </div>
         </Link>

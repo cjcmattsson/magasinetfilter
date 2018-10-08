@@ -150,7 +150,7 @@ body {
     text-decoration: none; }
     .bannerCardWrapper a .bannerCard {
       border-radius: 12px;
-      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       background-color: #FFFFFF;
       position: relative;
       width: 100%;
@@ -209,7 +209,7 @@ body {
   width: 80vw;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   margin-right: 16px;
   margin-bottom: 16px;
   height: 350px;
@@ -247,22 +247,25 @@ body {
       position: relative;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
       .largeCardWrapper a .largeCardContent .contentText {
-        height: 40%;
         display: flex;
         flex-direction: column;
-        height: 100px;
-        justify-content: space-between; }
-        .largeCardWrapper a .largeCardContent .contentText .topContent h2 {
+        justify-content: flex-end; }
+        .largeCardWrapper a .largeCardContent .contentText h2 {
           font-family: HarrietDisplayMedium;
           color: white;
           margin: 0; }
-        .largeCardWrapper a .largeCardContent .contentText .topContent p {
-          font-size: 12px;
-          font-family: PfDinPro; }
-        .largeCardWrapper a .largeCardContent .contentText p {
-          font-family: PfDinMedium;
-          font-size: 14px;
-          margin: 0; }
+        .largeCardWrapper a .largeCardContent .contentText .bottomContent {
+          height: 80px; }
+          .largeCardWrapper a .largeCardContent .contentText .bottomContent .timeOfRead, .largeCardWrapper a .largeCardContent .contentText .bottomContent .ingress {
+            margin: 0; }
+          .largeCardWrapper a .largeCardContent .contentText .bottomContent .timeOfRead {
+            margin: 4px 0 8px;
+            font-size: 12px;
+            font-family: PfDinPro; }
+          .largeCardWrapper a .largeCardContent .contentText .bottomContent .ingress {
+            font-family: DinAlternateBold;
+            font-size: 14px;
+            line-height: 20px; }
 
 .smallBannerCardWrapper {
   width: auto;
@@ -270,7 +273,7 @@ body {
   .smallBannerCardWrapper .smallBannerCardContent {
     width: 100%;
     height: 66px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
@@ -281,7 +284,8 @@ body {
       flex: 1; }
       .smallBannerCardWrapper .smallBannerCardContent a .smallCardImage {
         height: 66px;
-        width: 66px; }
+        width: 66px;
+        border-radius: 10px; }
       .smallBannerCardWrapper .smallBannerCardContent a .smallCardText {
         padding-left: 12px;
         flex: 1; }
@@ -328,9 +332,12 @@ body {
   .landingWrapper .mostReadArticlesContainer {
     box-sizing: border-box;
     width: 100vw;
-    padding: 0 16px; }
+    padding: 0 16px;
+    font-family: DinAlternateBold; }
     .landingWrapper .mostReadArticlesContainer .mostReadArticles {
-      margin-top: 2px; }
+      margin-top: 8px;
+      margin-bottom: 16px;
+      font-size: 20px; }
   .landingWrapper .landingSmallCardContainer {
     display: flex;
     flex-direction: row;
@@ -345,9 +352,20 @@ body {
       width: 100%;
       padding: 0; }
   .landingWrapper .headerRecommended {
+    font-family: DinAlternateBold;
+    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 16px;
     box-sizing: border-box;
     width: 100%;
     padding: 0 16px; }
+  .landingWrapper .headerLatestArticles {
+    font-family: DinAlternateBold;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    width: 100%; }
 
 .smallCardWrapper {
   width: auto;
@@ -372,6 +390,7 @@ body {
       padding: 10px;
       height: 160px;
       display: flex;
+      border-radius: 12px;
       align-items: flex-end;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
       .smallCardWrapper a .smallCardContent .bottomText {
@@ -382,7 +401,8 @@ body {
           font-family: DinAlternateBold;
           font-size: 14px; }
         .smallCardWrapper a .smallCardContent .bottomText p {
-          font-family: DinPfPro;
+          margin-top: 4px;
+          font-family: PfDinPro;
           font-size: 12px; }
 
 .readListWrapper {
@@ -394,13 +414,14 @@ body {
     justify-content: space-between;
     margin-bottom: 18px; }
     .readListWrapper .readListHistoryButtons .readListButton, .readListWrapper .readListHistoryButtons .historyButton {
+      font-family: DinAlternateBold;
       box-sizing: border-box;
       background-color: #ECECEC;
       height: 32px;
       width: 48%;
       border-radius: 15px;
       display: flex;
-      flex-direction: row;
+      flex-direction: center;
       justify-content: space-between;
       align-items: center;
       padding: 0 15px; }
@@ -590,14 +611,14 @@ body {
       height: 140px;
       padding: 3px 0 0;
       background-color: #E0AB9B;
-      border: 1px solid black;
       bottom: 5px;
       right: 4px;
       border-radius: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      display: none; }
+      display: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
       .articleWrapper .fontSizeChange .textChangeButtons p:nth-child(1) {
         font-size: 30px; }
       .articleWrapper .fontSizeChange .textChangeButtons p {
@@ -643,23 +664,31 @@ body {
       justify-content: flex-end;
       height: 55vh;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)); }
-      .articleWrapper .articleHeader .bottomContentArticle h2, .articleWrapper .articleHeader .bottomContentArticle h3, .articleWrapper .articleHeader .bottomContentArticle p {
+      .articleWrapper .articleHeader .bottomContentArticle h2, .articleWrapper .articleHeader .bottomContentArticle p {
         margin: 0;
         color: #FFFFFF; }
       .articleWrapper .articleHeader .bottomContentArticle h2 {
-        font-family: HarrietDisplayLight;
-        font-size: 24px;
-        letter-spacing: 0.8px; }
-      .articleWrapper .articleHeader .bottomContentArticle h3 {
-        font-size: 14px;
-        font-family: DinAlternateBold; }
+        font-family: HarrietDisplayMedium;
+        font-size: 24px; }
       .articleWrapper .articleHeader .bottomContentArticle p {
         font-family: PfDinPro;
         font-size: 12px;
         margin: 0;
-        color: #FFFFFF; }
-      .articleWrapper .articleHeader .bottomContentArticle div {
-        margin-bottom: 24px; }
+        color: #FFFFFF;
+        margin-top: 4px;
+        line-height: 20px; }
+      .articleWrapper .articleHeader .bottomContentArticle .timeAndIngress {
+        height: 80px; }
+        .articleWrapper .articleHeader .bottomContentArticle .timeAndIngress .timeOfRead, .articleWrapper .articleHeader .bottomContentArticle .timeAndIngress .ingress {
+          margin: 0; }
+        .articleWrapper .articleHeader .bottomContentArticle .timeAndIngress .timeOfRead {
+          margin: 0 0 8px;
+          font-size: 12px;
+          font-family: PfDinPro; }
+        .articleWrapper .articleHeader .bottomContentArticle .timeAndIngress .ingress {
+          font-family: DinAlternateBold;
+          font-size: 14px;
+          line-height: 20px; }
   .articleWrapper .articleTextWrapper .contentCreators, .articleWrapper .articleTextWrapper .listenAndShareIcons {
     margin-bottom: 12px;
     padding-top: 16px; }
@@ -681,50 +710,29 @@ body {
     padding: 0 16px;
     margin: 0; }
   .articleWrapper .articleTextWrapper .articelMainText {
-    transition: all 1s ease;
-    font-family: HarrietDisplayLight; }
+    line-height: 23px;
+    transition: all 2s ease-in-out;
+    font-family: HarrietText;
+    height: auto;
+    overflow: hidden; }
   .articleWrapper .articleTextWrapper .overlay {
     height: 150px;
     width: 100%;
     margin-top: -150px;
     position: relative; }
-  .articleWrapper .articleTextWrapper .payWall {
-    border: 1px solid #2C2C2C;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 440px;
-    background-color: #2C2C2C;
-    margin-bottom: 36px; }
-    .articleWrapper .articleTextWrapper .payWall img {
-      height: 200px; }
-    .articleWrapper .articleTextWrapper .payWall .paywallText {
-      margin: 16px 16px 0; }
-      .articleWrapper .articleTextWrapper .payWall .paywallText h3, .articleWrapper .articleTextWrapper .payWall .paywallText p {
-        color: #FFFFFF;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center; }
-      .articleWrapper .articleTextWrapper .payWall .paywallText h3 {
-        font-size: 30px;
-        margin-bottom: 16px; }
-    .articleWrapper .articleTextWrapper .payWall .paywallButton {
-      margin-top: 24px;
-      text-align: center;
-      width: 220px;
-      padding: 8px;
-      border-radius: 15px; }
-    .articleWrapper .articleTextWrapper .payWall .paywallLogin {
-      margin-top: 24px;
-      color: #FFFFFF; }
   .articleWrapper .afterArticleContent {
     margin-top: 24px; }
     .articleWrapper .afterArticleContent .similarReading {
       box-sizing: border-box;
       width: 100%;
       padding: 0 16px; }
+      .articleWrapper .afterArticleContent .similarReading h2 {
+        font-family: DinAlternateBold;
+        font-size: 20px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        width: 100%; }
 
 .categoryBox {
   box-sizing: border-box;
@@ -736,7 +744,9 @@ body {
   .categoryBox p {
     color: #FFFFFF;
     text-transform: uppercase;
+    font-size: 14px;
     margin: 7px 6px 6px;
+    letter-spacing: 0.75px;
     font-family: DinAlternateBold; }
 
 .subscribeCardWrapper {
@@ -747,7 +757,7 @@ body {
     text-decoration: none; }
     .subscribeCardWrapper a .subscribeCard {
       border-radius: 12px;
-      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       background-color: #FFFFFF;
       position: relative;
       width: 100%;
@@ -781,11 +791,17 @@ body {
           .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe h2 {
             font-family: HarrietDisplayMedium;
             font-size: 18px;
-            max-width: 80%; }
+            max-width: 80%;
+            letter-spacing: 0.1px; }
+          .subscribeCardWrapper a .subscribeCard .textContentKeepReading .bottomContentSubscribe p {
+            font-family: PfDinPro;
+            font-size: 12px; }
         .subscribeCardWrapper a .subscribeCard .textContentKeepReading p {
-          font-family: PfDinMedium; }
+          font-family: DinAlternateBold;
+          margin-top: 12px; }
         .subscribeCardWrapper a .subscribeCard .textContentKeepReading p:nth-child(3) {
-          font-size: 12px; }
+          font-size: 12px;
+          font-family: PfDinPro; }
         .subscribeCardWrapper a .subscribeCard .textContentKeepReading .progressBarKeepReading {
           height: 12px;
           width: 100%;
@@ -845,9 +861,10 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 440px;
+  height: auto;
   background-color: #2C2C2C;
-  margin-bottom: 36px; }
+  margin-bottom: 36px;
+  padding-bottom: 16px; }
   .payWall img {
     height: 200px; }
   .payWall .paywallText {
@@ -857,16 +874,26 @@ body {
       margin: 0;
       padding: 0;
       width: 100%;
-      text-align: center; }
+      text-align: left; }
     .payWall .paywallText h3 {
+      font-family: HarrietDisplayMedium;
       font-size: 30px;
       margin-bottom: 16px; }
+    .payWall .paywallText p {
+      font-family: HarrietText; }
   .payWall .paywallButton {
-    margin-top: 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
     text-align: center;
-    width: 220px;
-    padding: 8px;
-    border-radius: 15px; }
+    padding: 16px;
+    border-radius: 25px;
+    height: 40px;
+    font-family: DinAlternateBold; }
   .payWall .paywallLogin {
-    margin-top: 24px;
-    color: #FFFFFF; }
+    margin-top: 12px !important;
+    color: #FFFFFF;
+    font-family: PfDinPro;
+    font-size: 16px; }

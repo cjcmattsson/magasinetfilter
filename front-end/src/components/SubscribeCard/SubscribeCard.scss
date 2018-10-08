@@ -7,7 +7,7 @@
 
     .subscribeCard {
       border-radius: 12px;
-      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.50);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.50);
       background-color: $white;
       position: relative;
       width: 100%;
@@ -48,14 +48,22 @@
             h2 {
               font-family: HarrietDisplayMedium;
               font-size: 18px;
-              max-width: 80%
+              max-width: 80%;
+              letter-spacing: 0.1px;
+            }
+
+            p {
+              font-family: PfDinPro;
+              font-size: 12px;
             }
           }
             p {
-              font-family: PfDinMedium;
+              font-family: DinAlternateBold;
+              margin-top: 12px;
             }
             p:nth-child(3) {
               font-size: 12px;
+              font-family: PfDinPro;
             }
 
             .progressBarKeepReading {

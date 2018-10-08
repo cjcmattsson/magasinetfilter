@@ -58,7 +58,7 @@ componentDidMount() {
             <SmallBannerCard markedSaved={false} switchMode={switchMode} key={article.ID} article={article} />)}
         </div>
         <div className="landingSmallCardContainer">
-          <h2 className="headerRecommended" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Senast släppta artiklar</h2>
+          <h2 className="headerLatestArticles" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Senast släppta artiklar</h2>
           {articles && articles.map(article =>
             <SmallCard key={article.ID} article={article} />)}
         </div>

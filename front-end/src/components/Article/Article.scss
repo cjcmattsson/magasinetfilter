@@ -24,7 +24,6 @@
       height: 140px;
       padding: 3px 0 0;
       background-color: $pink;
-      border: 1px solid black;
       bottom: 5px;
       right: 4px;
       border-radius: 40px;
@@ -32,6 +31,7 @@
       flex-direction: column;
       align-items: center;
       display: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.50);
 
       p:nth-child(1) {
         font-size: 30px;
@@ -98,27 +98,40 @@
       justify-content: flex-end;
       height: 55vh;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.60));
-      h2, h3, p {
+      h2, p {
         margin: 0;
         color: $white;
       }
       h2 {
-        font-family: HarrietDisplayLight;
+        font-family: HarrietDisplayMedium;
         font-size: 24px;
-        letter-spacing: 0.8px;
-      }
-      h3 {
-        font-size: 14px;
-        font-family: DinAlternateBold;
       }
       p {
         font-family: PfDinPro;
         font-size: 12px;
         margin: 0;
         color: $white;
+        margin-top: 4px;
+        line-height: 20px;
       }
-      div {
-        margin-bottom: 24px;
+
+      .timeAndIngress {
+        height: 80px;
+
+        .timeOfRead, .ingress {
+          margin: 0;
+        }
+
+        .timeOfRead {
+          margin: 0 0 8px;
+          font-size: 12px;
+          font-family: PfDinPro;
+        }
+        .ingress {
+          font-family: DinAlternateBold;
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
     }
   }
@@ -152,8 +165,11 @@
     }
 
   .articelMainText {
-    transition: all 1s ease;
-    font-family: HarrietDisplayLight;
+    line-height: 23px;
+    transition: all 2s ease-in-out;
+    font-family: HarrietText;
+    height: auto;
+    overflow: hidden;
   }
 
   .overlay {
@@ -162,48 +178,7 @@
     margin-top: -150px;
     position: relative;
   }
-  .payWall {
-    border: 1px solid $dark-grey;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 440px;
-    background-color: $dark-grey;
-    margin-bottom: 36px;
 
-    img {
-      height: 200px;
-    }
-
-    .paywallText {
-      margin: 16px 16px 0;
-      h3, p {
-        color: $white;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-      }
-      h3 {
-        font-size: 30px;
-        margin-bottom: 16px;
-      }
-    }
-
-    .paywallButton {
-      margin-top: 24px;
-      text-align: center;
-      width: 220px;
-      padding: 8px;
-      border-radius: 15px;
-    }
-
-    .paywallLogin {
-      margin-top: 24px;
-      color: $white;
-    }
-  }
 
   }
   .afterArticleContent {
@@ -212,6 +187,14 @@
       box-sizing: border-box;
       width: 100%;
       padding: 0 16px;
+      h2 {
+        font-family: DinAlternateBold;
+        font-size: 20px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        width: 100%;
+      }
     }
 
   }

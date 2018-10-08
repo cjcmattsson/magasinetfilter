@@ -10,8 +10,9 @@ state = {
   article: false,
   scrollPercentage: 0,
   fontChange: false,
-  fontSize: 20,
+  fontSize: 16,
   paywallUp: true,
+  payWallShowing: true,
 }
 
 onScroll = () => {
@@ -70,6 +71,9 @@ onScroll = () => {
 
     paywallUp = () => {
       this.setState({paywallUp: false})
+      setTimeout(() => {
+        this.setState({payWallShowing: false})
+      }, 1000)
       localStorage.setItem('freeArticle', 1);
     }
 
@@ -104,11 +108,11 @@ onScroll = () => {
                 </div>
               </div>
               <div className="bottomContentArticle">
-                <div>
-                  <h2>{article.fields.title}</h2>
-                  <p>7 min läsning</p>
+                <h2>{article.fields.title}</h2>
+                <div className="timeAndIngress">
+                  <p className="timeOfRead">7 min läsning</p>
+                  <p className="ingress">{article.fields.ingress}</p>
                 </div>
-                <h3>{article.fields.ingress}</h3>
               </div>
             </div>
             <div className="articleTextWrapper">
@@ -122,13 +126,12 @@ onScroll = () => {
               </div>
               <div className="articelMainText" style={{
                   color: switchMode ? "#000000" : "#FFFFFF",
-                  height: paywallUp ? "500px" : "auto",
-                  overflow: paywallUp ? "hidden" : "visible",
+                  maxHeight: paywallUp ? "500px" : "5000px",
                 }}>
                 <p style={fontSize}>{article.fields.text}</p>
               </div>
               {paywallUp && <div className="overlay" style={{background: switchMode ? "linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255))" : "linear-gradient(rgba(45, 45, 45, 0), rgb(45, 45, 45))"}}></div>}
-              {paywallUp && <Paywall switchMode={switchMode} paywallUp={this.paywallUp}/>}
+              {this.state.payWallShowing && <Paywall switchMode={switchMode} paywallUp={this.paywallUp}/>}
             </div>
             <div className="afterArticleContent">
               <SubscribeCard/>

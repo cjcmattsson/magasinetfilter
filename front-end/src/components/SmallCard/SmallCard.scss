@@ -25,6 +25,7 @@
       padding: 10px;
       height: 160px;
       display: flex;
+      border-radius: 12px;
       align-items: flex-end;
       background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.60));
 
@@ -40,7 +41,8 @@
           font-size: 14px;
         }
         p {
-          font-family: DinPfPro;
+          margin-top: 4px;
+          font-family: PfDinPro;
           font-size: 12px;
         }
       }
