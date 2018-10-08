@@ -10,11 +10,12 @@ class ArchiveSortingCategory extends Component {
     this.setState({checkbox: !this.state.checkbox})
   }
 
+
   render() {
     return (
       <div className="sortingCategory" onClick={this.checkCheckbox}>
-        <p>{this.props.category}</p>
-        <img src={this.state.checkbox
+        <p onClick={this.props.getTextContent}>{this.props.category}</p>
+        <img onClick={this.props.getTextContent} src={this.state.checkbox
           ? require('../../assets/icons/checkbox_fill.svg')
           : require('../../assets/icons/checkbox_empty.svg')} alt=""
         />

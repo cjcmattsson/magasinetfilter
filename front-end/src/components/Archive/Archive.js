@@ -3,6 +3,7 @@ import SmallCard from '../SmallCard/SmallCard';
 import ArchiveFilterCategory from '../ArchiveFilterCategory/ArchiveFilterCategory';
 import filterCategoryList from '../helpers/filterCategoryList';
 import ArchiveSortingCategory from '../ArchiveSortingCategory/ArchiveSortingCategory';
+import SearchBar from '../SearchBar/SearchBar';
 import sortingCategoryList from '../helpers/sortingCategoryList.js';
 
 class Archive extends Component {
@@ -11,6 +12,7 @@ class Archive extends Component {
     sort: false,
     filter: false,
     latestArticle: false,
+    sortCategory: false,
   }
 
   componentWillReceiveProps () {
@@ -44,34 +46,32 @@ class Archive extends Component {
     }
 
   render() {
-    const {sort, filter} = this.state;
+    const {sort, filter, sortCategory} = this.state;
     const {articles} = this.props;
-
-    const searchIcon = {
-      backgroundImage: `url(${require('../../assets/icons/search_dark.svg')})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: '5% 50%',
-    }
 
     return (
       <div className="archiveWrapper">
-        <div className="searchFieldWrapper" style={searchIcon}>
-          <input className="searchFieldInput" type="text" placeholder="Sök" />
-        </div>
+        <SearchBar />
         <div className="sortAndFilterFields">
           {sort
             ? <div className="openSortByFieldWrapper">
-                <div className="openSortByFieldButton" onClick={this.showSort}>Sortera efter</div>
+                <div className="openSortByFieldButton" onClick={this.showSort}>
+                  {sortCategory ? sortCategory : "Sortera efter"}
+                </div>
                 <div className="sortByFieldBoxWrapper">
-                  <div className="sortByFieldBox">
+                  <div className="sortByFieldBox" onClick={this.showSort}>
                     {sortingCategoryList && sortingCategoryList.map((category, key) => {
-                      return <ArchiveSortingCategory key={key} category={category.text}/>
+                      return <div key={key} onClick={() => {
+                          this.setState({sortCategory: category.text})
+                        }}>
+                        <ArchiveSortingCategory key={key} category={category.text}/>
+                      </div>
                     })}
                   </div>
                 </div>
               </div>
             : <div className="sortByField" style={{borderRadius: filter ? "15px 15px 0 0" : "15px"}} onClick={this.showSort}>
-                <p>Sortera efter</p>
+                <p>{sortCategory ? sortCategory : "Sortera efter"}</p>
                 <img src={require('../../assets/icons/arrow_transperant.svg')} alt=""/>
               </div>
             }
@@ -91,8 +91,9 @@ class Archive extends Component {
                     <ArchiveFilterCategory icon={require('../../assets/icons/arrow_transperant.svg')} category={"20 minuter"}/>
                     <ArchiveFilterCategory icon={require('../../assets/icons/arrow_transperant.svg')} category={"20 minuter"}/>
                   </div>
-                  <div className="soundArticle">
+                  <div className="soundAndButtonArticle">
                     <ArchiveFilterCategory icon={require('../../assets/icons/sound_dark.svg')} category={"Välj inlästa artiklar"}/>
+                    <div onClick={this.showFilter} className="button">Välj</div>
                   </div>
                 </div>
               </div>

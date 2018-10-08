@@ -1,0 +1,14 @@
+.leftToReadBar {
+  margin-top: auto;
+  border-radius: 12px;
+  height: 8px;
+  width: 90%;
+  background-color: $grey;
+
+  .progressBar{
+      border-radius: 12px 0 0 12px;
+      width: random(120) + px;
+      background-color: $pink;
+      height: 8px;
+  }
+}

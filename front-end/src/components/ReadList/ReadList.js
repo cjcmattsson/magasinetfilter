@@ -20,7 +20,7 @@ class ReadList extends Component {
         window.scrollTo(0, this.scrollPosition)
       }
     }
-    
+
   componentDidMount() {
     if (localStorage.getItem('latestArticle')) {
       const latestArticle = JSON.parse(localStorage.getItem('latestArticle'));
@@ -43,13 +43,13 @@ class ReadList extends Component {
     return (
       <div className="readListWrapper">
         <div className="readListHistoryButtons">
-          <div onClick={this.listTab} className="readListButton" style={{backgroundColor: this.state.listTab ? "#E0AB9B" : ""}}>Min Läslista</div>
+          <div onClick={this.listTab} className="readListButton" style={{backgroundColor: this.state.listTab ? "#E0AB9B" : ""}}>Min läslista</div>
           <div onClick={this.historyTab} className="historyButton" style={{backgroundColor: this.state.historyTab ? "#E0AB9B" : ""}}>Historik</div>
         </div>
         {articles && articles.map(article =>
-          <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
+          <SmallBannerCard leftToRead={true} switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
         {articles && articles.map(article =>
-          <SmallBannerCard switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
+          <SmallBannerCard leftToRead={true} switchMode={switchMode} markedSaved={true} key={article.ID} article={article} />)}
       </div>
     )
   }

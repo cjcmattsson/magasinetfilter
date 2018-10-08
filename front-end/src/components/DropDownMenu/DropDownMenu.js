@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 
 class DropDownMenu extends Component {
 
@@ -6,6 +7,7 @@ class DropDownMenu extends Component {
   render() {
     return (
       <div className="dropDownMenu" style={{transform: this.props.dropDownMenu ? "translateY(0)" : ""}}>
+        <SearchBar/>
         <div className="dropDownMenuLinks">
           <ul className="topMenuItems">
             <li><p>Logga in</p> <img src={require('../../assets/icons/arrow_dark.svg')} alt=""/> </li>

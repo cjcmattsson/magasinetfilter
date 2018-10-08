@@ -1,13 +1,13 @@
+$progressBars: progressBar;
+
 .smallBannerCardWrapper {
   width: auto;
   height: auto;
 
-
-
     .smallBannerCardContent {
       width: 100%;
       height: 66px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -26,13 +26,15 @@
       }
 
       .smallCardText {
+        display: flex;
+        flex-direction: column;
         padding-left: 12px;
         flex: 1;
         h2 {
           font-family: HarrietDisplayMedium;
           color: $black;
           font-size: 18px;
-          margin: 0;
+          margin: 3px 0 0;
         }
         p {
           font-size: 12px;

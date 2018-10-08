@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
+import ProgressBarReadlist from '../ProgressBarReadlist/ProgressBarReadlist';
 
 
 class SmallBannerCard extends Component {
-
 
   render() {
     const {article, switchMode} = this.props;
@@ -24,6 +24,9 @@ class SmallBannerCard extends Component {
             <div className="smallCardText">
               <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>{article.fields.title}</h2>
               <p style={{color: switchMode ? "#000000" : "#FFFFFF"}}>5 min läsning</p>
+              {this.props.leftToRead &&
+                <ProgressBarReadlist/>
+                }
             </div>
           </Link>
             <div className="smallCardSave">

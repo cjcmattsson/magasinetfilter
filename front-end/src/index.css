@@ -71,19 +71,21 @@ body {
     border-bottom: 1px solid #FFFFFF; }
 
 .dropDownMenu {
-  padding-top: 30px;
+  box-sizing: border-box;
   position: absolute;
   top: 0px;
   width: 100vw;
   height: 100vh;
   background-color: #E0AB9B;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transform: translateY(-100vh);
-  transition: 0.5s all ease-out; }
+  transition: 0.5s all ease-out;
+  padding: 72px 16px 0; }
   .dropDownMenu .dropDownMenuLinks {
-    width: 232px;
+    width: 100%;
     height: 80vh; }
   .dropDownMenu ul {
     padding: 0;
@@ -273,7 +275,7 @@ body {
   .smallBannerCardWrapper .smallBannerCardContent {
     width: 100%;
     height: 66px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
@@ -287,13 +289,15 @@ body {
         width: 66px;
         border-radius: 10px; }
       .smallBannerCardWrapper .smallBannerCardContent a .smallCardText {
+        display: flex;
+        flex-direction: column;
         padding-left: 12px;
         flex: 1; }
         .smallBannerCardWrapper .smallBannerCardContent a .smallCardText h2 {
           font-family: HarrietDisplayMedium;
           color: #000000;
           font-size: 18px;
-          margin: 0; }
+          margin: 3px 0 0; }
         .smallBannerCardWrapper .smallBannerCardContent a .smallCardText p {
           font-size: 12px;
           font-family: PfDinPro;
@@ -304,7 +308,8 @@ body {
       height: 100%; }
 
 .landingWrapper {
-  padding-top: 15px; }
+  padding-top: 15px;
+  transition: all 1s ease; }
   .landingWrapper .landingLargeCardContainer {
     box-sizing: border-box;
     display: flex;
@@ -412,6 +417,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 18px; }
     .readListWrapper .readListHistoryButtons .readListButton, .readListWrapper .readListHistoryButtons .historyButton {
       font-family: DinAlternateBold;
@@ -421,8 +427,7 @@ body {
       width: 48%;
       border-radius: 15px;
       display: flex;
-      flex-direction: center;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 0 15px; }
 
@@ -430,29 +435,6 @@ body {
   box-sizing: border-box;
   width: 100vw;
   padding: 16px 16px 0; }
-  .archiveWrapper .searchFieldWrapper {
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    background-color: #ECECEC;
-    border-radius: 16px;
-    margin-bottom: 18px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 4px 0 45px; }
-    .archiveWrapper .searchFieldWrapper .searchFieldInput {
-      background-color: #ECECEC;
-      box-sizing: border-box;
-      padding-left: 10px;
-      border-radius: 12px;
-      border: none;
-      height: 32px;
-      width: 100%;
-      font-size: 16px; }
-    .archiveWrapper .searchFieldWrapper .searchFieldInput:active, .archiveWrapper .searchFieldWrapper .searchFieldInput:focus {
-      outline: none; }
   .archiveWrapper .sortAndFilterFields {
     box-sizing: border-box;
     width: 100%;
@@ -563,10 +545,22 @@ body {
               height: 16px; }
             .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .filterArticleLength .filterCategory:nth-child(1) img:nth-child(2) {
               transform: rotate(180deg); }
-          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundArticle img {
-            margin-right: 16px; }
-          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundArticle .filterCategory p {
-            width: auto; }
+          .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundAndButtonArticle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundAndButtonArticle img {
+              margin-right: 16px; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundAndButtonArticle .filterCategory p {
+              width: auto; }
+            .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox .soundAndButtonArticle .button {
+              box-sizing: border-box;
+              padding: 6px 24px;
+              background-color: #ECECEC;
+              border-radius: 25px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+              margin-bottom: 15px; }
           @media screen and (max-width: 321px) {
             .archiveWrapper .sortAndFilterFields .openFilterWrapper .filterByFieldBoxWrapper .filterByFieldBox h3 {
               margin-bottom: 8px; }
@@ -711,7 +705,7 @@ body {
     margin: 0; }
   .articleWrapper .articleTextWrapper .articelMainText {
     line-height: 23px;
-    transition: all 2s ease-in-out;
+    transition: max-height 2s ease-in-out;
     font-family: HarrietText;
     height: auto;
     overflow: hidden; }
@@ -855,6 +849,18 @@ body {
     font-family: DinAlternateBold;
     font-size: 16px; }
 
+.leftToReadBar {
+  margin-top: auto;
+  border-radius: 12px;
+  height: 8px;
+  width: 90%;
+  background-color: #ECECEC; }
+  .leftToReadBar .progressBar {
+    border-radius: 12px 0 0 12px;
+    width: 29px;
+    background-color: #E0AB9B;
+    height: 8px; }
+
 .payWall {
   border: 1px solid #2C2C2C;
   display: flex;
@@ -897,3 +903,27 @@ body {
     color: #FFFFFF;
     font-family: PfDinPro;
     font-size: 16px; }
+
+.searchFieldWrapper {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: #ECECEC;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 4px 0 45px; }
+  .searchFieldWrapper .searchFieldInput {
+    background-color: #ECECEC;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-radius: 12px;
+    border: none;
+    height: 32px;
+    width: 100%;
+    font-size: 16px; }
+  .searchFieldWrapper .searchFieldInput:active, .searchFieldWrapper .searchFieldInput:focus {
+    outline: none; }
