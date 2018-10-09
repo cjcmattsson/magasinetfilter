@@ -47,6 +47,12 @@ class Archive extends Component {
       this.setState({filter: !this.state.filter, sort: false})
     }
 
+    removeFilterCategory = (item) => {
+      var allFilters = this.state.chosenFilters;
+      allFilters = allFilters.filter(filter => filter !== item);
+      this.setState({chosenFilters: allFilters});
+    }
+
   render() {
     const {sort, filter, sortCategory, chosenFilters} = this.state;
     const {articles, switchMode} = this.props;
@@ -63,11 +69,10 @@ class Archive extends Component {
                 <div className="sortByFieldBoxWrapper">
                   <div className="sortByFieldBox" onClick={this.showSort}>
                     {sortingCategoryList && sortingCategoryList.map((category, key) => {
-                      return <div key={key} onClick={() => {
-                          this.setState({sortCategory: category.text})
-                        }}>
-                        <ArchiveSortingCategory key={key} category={category.text}/>
-                      </div>
+                    return <div key={key} onClick={() => {
+                            this.setState({sortCategory: category.text})}}>
+                            <ArchiveSortingCategory key={key} category={category.text}/>
+                          </div>
                     })}
                   </div>
                 </div>
@@ -87,7 +92,6 @@ class Archive extends Component {
                     {filterCategoryList && filterCategoryList.map((category, key) => {
                       return <div key={key} onClick={() => {
                           this.state.chosenFilters.push(category.text)
-                          console.log(this.state.chosenFilters);
                         }}>
                         <ArchiveFilterCategory category={category.text}/>
                       </div>
@@ -116,7 +120,7 @@ class Archive extends Component {
             <p style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Valda filter</p>
             <div className="filterList">
               {chosenFilters && chosenFilters.map((filter, key) =>
-                <FilterCategoryBox key={key} filterCategory={filter} />)}
+                <FilterCategoryBox removeFilterCategory={this.removeFilterCategory} key={key} filterCategory={filter} />)}
             </div>
         </div>}
         <div className="archiveCards">

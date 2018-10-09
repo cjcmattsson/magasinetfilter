@@ -6,7 +6,7 @@ class FilterCategoryBox extends Component {
     return (
         <div className="filterCategoryBox">
           <p>{this.props.filterCategory}</p>
-          <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
+          <img onClick={() => this.props.removeFilterCategory(this.props.filterCategory)} src={require('../../assets/icons/closeblack.svg')} alt=""/>
         </div>
       );
     }

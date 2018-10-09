@@ -53,7 +53,7 @@ componentDidMount() {
             </div>
         </div>
         <div className="mostReadArticlesContainer">
-          <h2 className="mostReadArticles" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Mest lästa</h2>
+          <h2 className="mostReadArticles" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Populära artiklar</h2>
           {articles && articles.map(article =>
             <SmallBannerCard markedSaved={false} switchMode={switchMode} key={article.ID} article={article} />)}
         </div>

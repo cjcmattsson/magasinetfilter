@@ -10,14 +10,8 @@ class BannerCard extends Component {
 
   render() {
 
-    const {latestArticle} = this.props;
-    const scrollLatest = localStorage.getItem('scrollLatest')
-    const progressBar = {
-      width: `${scrollLatest}%`
-    }
-
     const imageStyle = {
-      backgroundImage: `url(${latestArticle.fields.image.url})`,
+      backgroundImage: `url(${require('../../assets/icons/products.jpg')})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -25,17 +19,14 @@ class BannerCard extends Component {
 
     return (
       <div className="bannerCardWrapper">
-        <Link to={`/article/${latestArticle.ID}`}>
+        <Link to={`/`}>
           <div className="bannerCard">
             <div className="imageHere" style={imageStyle}></div>
             <div className="textContentKeepReading">
-              <p>Fortsätt där du slutade</p>
-              <div className="bottomContentKeepReading">
-                <h2>{this.props.latestArticle.fields.title}</h2>
+              <p>Läs nästa artikel</p>
+              <div className="bottomContentNextArticle">
+                <h2>Tomaten - Hjärnans bästa vän!</h2>
                 <p>15 min läsning</p>
-              </div>
-              <div className="progressBarKeepReading">
-                <div className="progress" style={progressBar}></div>
               </div>
             </div>
             <div className="closeKeepReading" onClick={this.closeKeepReading}>

@@ -8,6 +8,7 @@
   background-color: $dark-grey;
   margin-bottom: 36px;
   padding-bottom: 16px;
+  z-index: 600;
 
   img {
     height: 200px;
@@ -51,5 +52,40 @@
     color: $white;
     font-family: PfDinPro;
     font-size: 16px;
+  }
+
+  .newsletterSignup {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PfDinPro;
+    font-size: 18px;
+
+    input {
+      height: 40px;
+      background-color: $white;
+      border-radius: 8px;
+      border: none;
+      width: 280px;
+      outline: none;
+      padding-left: 16px;
+      font-size: 18px;
+    }
+
+    .newsletterButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      padding: 11px 8px 8px;
+      border-radius: 25px;
+      background-color: white;
+    }
   }
 }

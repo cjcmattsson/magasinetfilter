@@ -130,7 +130,8 @@ body {
 
 @font-face {
   font-family: 'HarrietDisplayMedium';
-  src: url("assets/styles/fonts/Harriet Display Medium.otf"); }
+  src: url("assets/styles/fonts/HarrietDisplayMedium.otf");
+  font-weight: bold; }
 
 @font-face {
   font-family: 'PfDinMedium';
@@ -142,7 +143,8 @@ body {
 
 @font-face {
   font-family: 'DinAlternateBold';
-  src: url("assets/styles/fonts/DIN Alternate Bold.ttf"); }
+  src: url("assets/styles/fonts/DIN Alternate Bold.ttf");
+  font-weight: bold; }
 
 .bannerCardWrapper {
   width: auto;
@@ -170,20 +172,32 @@ body {
         flex-direction: column;
         justify-content: space-between;
         flex: 1; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading h2, .bannerCardWrapper a .bannerCard .textContentKeepReading p {
-          margin: 0;
-          margin-left: 8px; }
         .bannerCardWrapper a .bannerCard .textContentKeepReading p {
-          font-family: PfDinMedium; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading p:nth-child(1) {
           font-size: 14px;
-          margin-top: 10px; }
+          margin-top: 16px;
+          margin-left: 8px; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading {
+          box-sizing: border-box;
+          padding: 0 0 3px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading h2, .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading p {
+            margin: 0;
+            margin-left: 8px;
+            margin-bottom: 4px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading h2 {
+            font-family: HarrietDisplayMedium;
+            font-size: 18px;
+            max-width: 80%;
+            letter-spacing: 0.1px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading p {
+            font-family: PfDinPro;
+            font-size: 12px;
+            margin-bottom: 0; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading p {
+          font-family: DinAlternateBold;
+          margin-top: 12px; }
         .bannerCardWrapper a .bannerCard .textContentKeepReading p:nth-child(3) {
-          font-size: 12px; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading h2 {
-          font-family: HarrietDisplayMedium;
-          font-size: 18px;
-          max-width: 80%; }
+          font-size: 12px;
+          font-family: PfDinPro; }
         .bannerCardWrapper a .bannerCard .textContentKeepReading .progressBarKeepReading {
           height: 12px;
           width: 100%;
@@ -612,39 +626,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; }
+    flex-direction: column;
+    transition: all 0.3s ease-in-out; }
     .articleWrapper .fontSizeChange img {
       z-index: 1801;
       position: absolute;
       bottom: 0;
       right: 0; }
-    .articleWrapper .fontSizeChange .textChangeButtons {
-      position: absolute;
-      z-index: 1800;
-      width: 49px;
-      height: 140px;
-      padding: 3px 0 0;
-      background-color: #E0AB9B;
-      bottom: 5px;
-      right: 4px;
-      border-radius: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      display: none;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
-      .articleWrapper .fontSizeChange .textChangeButtons p:nth-child(1) {
-        font-size: 30px; }
-      .articleWrapper .fontSizeChange .textChangeButtons p {
-        font-family: 'Roboto', sans-serif;
-        font-size: 26px;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 40px;
-        text-decoration: none; }
   .articleWrapper .articleHeader {
     width: 100%;
     height: 60vh;
@@ -724,16 +712,43 @@ body {
     padding: 0 16px;
     margin: 0; }
   .articleWrapper .articleTextWrapper .articelMainText {
-    line-height: 23px;
     transition: max-height 2s ease-in-out;
     font-family: HarrietText;
     height: auto;
     overflow: hidden; }
+    .articleWrapper .articleTextWrapper .articelMainText .textChangeButtons {
+      position: absolute;
+      z-index: 500;
+      width: 49px;
+      height: 140px;
+      padding: 3px 0 0;
+      background-color: #E0AB9B;
+      bottom: 5px;
+      right: 4px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+      .articleWrapper .articleTextWrapper .articelMainText .textChangeButtons p:nth-child(1) {
+        font-size: 30px; }
+      .articleWrapper .articleTextWrapper .articelMainText .textChangeButtons p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 26px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40px;
+        text-decoration: none; }
   .articleWrapper .articleTextWrapper .overlay {
-    height: 150px;
+    height: 100px;
     width: 100%;
-    margin-top: -150px;
-    position: relative; }
+    margin-top: -100px;
+    position: relative;
+    z-index: 1; }
   .articleWrapper .afterArticleContent {
     margin-top: 24px; }
     .articleWrapper .afterArticleContent .similarReading {
@@ -877,7 +892,7 @@ body {
   background-color: #ECECEC; }
   .leftToReadBar .progressBar {
     border-radius: 12px 0 0 12px;
-    width: 2px;
+    width: 35px;
     background-color: #E0AB9B;
     height: 8px; }
 
@@ -890,7 +905,8 @@ body {
   height: auto;
   background-color: #2C2C2C;
   margin-bottom: 36px;
-  padding-bottom: 16px; }
+  padding-bottom: 16px;
+  z-index: 600; }
   .payWall img {
     height: 200px; }
   .payWall .paywallText {
@@ -923,6 +939,35 @@ body {
     color: #FFFFFF;
     font-family: PfDinPro;
     font-size: 16px; }
+  .payWall .newsletterSignup {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PfDinPro;
+    font-size: 18px; }
+    .payWall .newsletterSignup input {
+      height: 40px;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      border: none;
+      width: 280px;
+      outline: none;
+      padding-left: 16px;
+      font-size: 18px; }
+    .payWall .newsletterSignup .newsletterButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      padding: 11px 8px 8px;
+      border-radius: 25px;
+      background-color: white; }
 
 .searchFieldWrapper {
   width: 100%;
@@ -968,3 +1013,77 @@ body {
     margin-left: 10px;
     height: 12px;
     width: 12px; }
+
+.bannerCardWrapper {
+  width: auto;
+  height: auto;
+  padding: 0 16px; }
+  .bannerCardWrapper a {
+    text-decoration: none; }
+    .bannerCardWrapper a .bannerCard {
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      background-color: #FFFFFF;
+      position: relative;
+      width: 100%;
+      height: 112px;
+      display: flex;
+      flex-direction: row; }
+      .bannerCardWrapper a .bannerCard .imageHere {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        height: 100%;
+        width: 112px; }
+      .bannerCardWrapper a .bannerCard .textContentKeepReading {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading p {
+          font-size: 14px;
+          margin-top: 16px;
+          margin-left: 8px; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentNextArticle {
+          box-sizing: border-box;
+          padding: 0 0 3px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentNextArticle h2, .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentNextArticle p {
+            margin: 0;
+            margin-left: 8px;
+            margin-bottom: 4px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentNextArticle h2 {
+            font-family: HarrietDisplayMedium;
+            font-size: 18px;
+            max-width: 80%;
+            letter-spacing: 0.1px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentNextArticle p {
+            font-family: PfDinPro;
+            font-size: 12px;
+            margin-bottom: 12px; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading p {
+          font-family: DinAlternateBold;
+          margin-top: 12px; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading p:nth-child(3) {
+          font-size: 12px;
+          font-family: PfDinPro; }
+        .bannerCardWrapper a .bannerCard .textContentKeepReading .progressBarKeepReading {
+          height: 12px;
+          width: 100%;
+          background-color: #ECECEC;
+          border-bottom-right-radius: 12px; }
+          .bannerCardWrapper a .bannerCard .textContentKeepReading .progressBarKeepReading .progress {
+            background-color: #E0AB9B;
+            height: 100%; }
+      .bannerCardWrapper a .bannerCard .closeKeepReading {
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 38px;
+        height: 38px; }
+        .bannerCardWrapper a .bannerCard .closeKeepReading img {
+          width: 16px;
+          height: 16px; }

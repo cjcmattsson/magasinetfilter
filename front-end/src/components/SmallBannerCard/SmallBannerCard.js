@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import SaveArticleIcon from '../SaveArticleIcon/SaveArticleIcon';
+import SavedArticleIcon from '../SavedArticleIcon/SavedArticleIcon';
 import ProgressBarReadlist from '../ProgressBarReadlist/ProgressBarReadlist';
 
 
@@ -22,7 +23,18 @@ class SmallBannerCard extends Component {
             <Link to={`/article/${article.ID}`}>
             <div className="smallCardImage" style={imageStyle}></div>
             <div className="smallCardText">
-              <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>{article.fields.title}</h2>
+              {this.props.leftToRead ?
+                <h2 style={{
+                    color: switchMode ? "#000000" : "#FFFFFF",
+                    width: "10em",
+                    height: "1.2em",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}>{article.fields.title}</h2>
+                :
+                <h2 style={{color: switchMode ? "#000000" : "#FFFFFF"}}>{article.fields.title}</h2>
+              }
               <p style={{color: switchMode ? "#000000" : "#FFFFFF"}}>5 min läsning</p>
               {this.props.leftToRead &&
                 <ProgressBarReadlist/>
@@ -30,7 +42,8 @@ class SmallBannerCard extends Component {
             </div>
           </Link>
             <div className="smallCardSave">
-              <SaveArticleIcon markedSaved={true} />
+              {this.props.markedSaved ? <SavedArticleIcon/> : <SaveArticleIcon />}
+
             </div>
           </div>
       </div>
