@@ -716,6 +716,13 @@ body {
     font-family: HarrietText;
     height: auto;
     overflow: hidden; }
+    .articleWrapper .articleTextWrapper .articelMainText .articleImage {
+      margin: 16px 0;
+      box-sizing: border-box;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      padding: 0 16px; }
     .articleWrapper .articleTextWrapper .articelMainText .textChangeButtons {
       position: absolute;
       z-index: 500;
@@ -892,7 +899,7 @@ body {
   background-color: #ECECEC; }
   .leftToReadBar .progressBar {
     border-radius: 12px 0 0 12px;
-    width: 35px;
+    width: 17px;
     background-color: #E0AB9B;
     height: 8px; }
 

@@ -156,7 +156,70 @@ onScroll = () => {
                 <img src={switchMode ? require('../../assets/icons/share_dark.svg') : require('../../assets/icons/share_white.svg')} alt=""/>
               </div>
               <div className="articelMainText" style={dontShowPaywall ? mainTextStyleOpen : mainTextStyleClosed}>
-                <p style={fontSize}>{article.fields.text}</p>
+                <p style={fontSize}>
+                  Lumbiafängelsets rastgård saknar tak och solen gassar från en öppen himmel. Hettan är olidlig.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  34-årige Andreas Solemo och 29-årige Stefan Cederholm tränger ihop sig på en tunn träbänk i det överbefolkade fängelset i Cayagan de Oro. Båda har tappat tio kilo under den tid de suttit häktade för ett brott som ger livstids fängelse.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Lumbiafängelsets rastgård saknar tak och solen gassar från en öppen himmel. Hettan är olidlig.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  34-årige Andreas Solemo och 29-årige Stefan Cederholm tränger ihop sig på en tunn träbänk i det överbefolkade fängelset i Cayagan de Oro. Båda har tappat tio kilo under den tid de suttit häktade för ett brott som ger livstids fängelse.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Andreas är brunbränd med två dagars skäggstubb, talför och nyfiken. Under de tio månader som gått har han enligt vakterna blivit »helt okej« på gitarr och bra på basket.
+                </p>
+                <img className="articleImage" src={require('../../assets/icons/products.jpg')} alt=""/>
+                <p style={fontSize}>
+                  – Är man 1,94 kan man dunka, konstaterar Andreas.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Stefan är blekare, orakad, misstänksam och ser ut att ha lidit mer av fängelsevistelsen. Han föredrar att gå »runt, runt, runt«, berättar vakterna.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Artiklarna i svensk press om att de pressat minderåriga att onanera framför webbkameror har tagit hårt, liksom anklagelsen om människohandel.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  – Människohandel för mig är när ryssar för mexikaner över gränsen till USA för slavarbete, säger Andreas. Att använda den lagstiftningen på oss är helt jävla fuckat.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Lumbiafängelsets rastgård saknar tak och solen gassar från en öppen himmel. Hettan är olidlig.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  34-årige Andreas Solemo och 29-årige Stefan Cederholm tränger ihop sig på en tunn träbänk i det överbefolkade fängelset i Cayagan de Oro. Båda har tappat tio kilo under den tid de suttit häktade för ett brott som ger livstids fängelse.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Andreas är brunbränd med två dagars skäggstubb, talför och nyfiken. Under de tio månader som gått har han enligt vakterna blivit »helt okej« på gitarr och bra på basket.
+                </p>
+                <img className="articleImage" src={require('../../assets/icons/products.jpg')} alt=""/>
+                <p style={fontSize}>
+                  – Är man 1,94 kan man dunka, konstaterar Andreas.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Stefan är blekare, orakad, misstänksam och ser ut att ha lidit mer av fängelsevistelsen. Han föredrar att gå »runt, runt, runt«, berättar vakterna.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  Artiklarna i svensk press om att de pressat minderåriga att onanera framför webbkameror har tagit hårt, liksom anklagelsen om människohandel.
+                </p>
+                <br/>
+                <p style={fontSize}>
+                  – Människohandel för mig är när ryssar för mexikaner över gränsen till USA för slavarbete, säger Andreas. Att använda den lagstiftningen på oss är helt jävla fuckat.
+                </p>
+                <br/>
                 <div className="fontSizeChange" style={{
                     opacity: this.state.fixTextChange ? 0 : 1,
                    }}>

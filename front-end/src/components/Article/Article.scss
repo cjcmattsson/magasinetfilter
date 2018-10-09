@@ -140,6 +140,15 @@
     height: auto;
     overflow: hidden;
 
+    .articleImage {
+      margin: 16px 0;
+      box-sizing: border-box;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      padding: 0 16px;
+    }
+
     .textChangeButtons {
       position: absolute;
       z-index: 500;
