@@ -3,11 +3,6 @@ import { Link } from "@reach/router";
 
 class BannerCard extends Component {
 
-  closeKeepReading = () => {
-    localStorage.removeItem('keepReading');
-    localStorage.removeItem('latestArticle');
-  }
-
   render() {
 
     const {latestArticle} = this.props;
@@ -25,8 +20,8 @@ class BannerCard extends Component {
 
     return (
       <div className="bannerCardWrapper">
-        <Link to={`/article/${latestArticle.ID}`}>
           <div className="bannerCard">
+            <Link to={`/article/${latestArticle.ID}`}>
             <div className="imageHere" style={imageStyle}></div>
             <div className="textContentKeepReading">
               <p>Fortsätt där du slutade</p>
@@ -38,11 +33,11 @@ class BannerCard extends Component {
                 <div className="progress" style={progressBar}></div>
               </div>
             </div>
-            <div className="closeKeepReading" onClick={this.closeKeepReading}>
-              <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
-            </div>
+          </Link>
+          <div className="closeKeepReading" onClick={this.props.removeTopBannerCard}>
+            <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
           </div>
-        </Link>
+          </div>
       </div>
     )
   }

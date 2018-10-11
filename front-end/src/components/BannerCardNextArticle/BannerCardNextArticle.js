@@ -11,7 +11,7 @@ class BannerCard extends Component {
   render() {
 
     const imageStyle = {
-      backgroundImage: `url(${require('../../assets/icons/products.jpg')})`,
+      backgroundImage: `url(${require('../../assets/icons/vin-bild.jpg')})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',

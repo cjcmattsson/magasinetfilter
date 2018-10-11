@@ -43,7 +43,6 @@ class SmallBannerCard extends Component {
           </Link>
             <div className="smallCardSave">
               {this.props.markedSaved ? <SavedArticleIcon/> : <SaveArticleIcon />}
-
             </div>
           </div>
       </div>

@@ -16,7 +16,7 @@ state = {
   paywallUp: true,
   payWallShowing: true,
   fixTextChange: false,
-  dontShowPaywall: false
+  dontShowPaywall: false,
 }
 
 onScroll = () => {
@@ -27,15 +27,16 @@ onScroll = () => {
 
 
   componentDidMount() {
+    if (!localStorage.getItem('scrollLatest')) {
+      localStorage.setItem('scrollLatest', 0)
+    }
     const checkIfFree = localStorage.getItem("freeArticle1");
     const checkIfSecondFree = localStorage.getItem("freeArticle2");
     if (checkIfFree === this.props.articleId || checkIfSecondFree === this.props.articleId) {
-      console.log(this.props.articleId);
       this.setState({dontShowPaywall: true})
     }
       const thisArticle = JSON.parse(localStorage.getItem(this.props.articleId));
       this.setState({article: thisArticle})
-      console.log(thisArticle);
       fetch(`http://localhost:8888/wp-json/myplugin/v2/article/${this.props.articleId}`)
       .then(res => res.json())
       .then(
@@ -175,7 +176,7 @@ onScroll = () => {
                 <p style={fontSize}>
                   Andreas är brunbränd med två dagars skäggstubb, talför och nyfiken. Under de tio månader som gått har han enligt vakterna blivit »helt okej« på gitarr och bra på basket.
                 </p>
-                <img className="articleImage" src={require('../../assets/icons/products.jpg')} alt=""/>
+                <img className="articleImage" src={require('../../assets/icons/promoe-text.jpg')} alt=""/>
                 <p style={fontSize}>
                   – Är man 1,94 kan man dunka, konstaterar Andreas.
                 </p>
@@ -203,7 +204,7 @@ onScroll = () => {
                 <p style={fontSize}>
                   Andreas är brunbränd med två dagars skäggstubb, talför och nyfiken. Under de tio månader som gått har han enligt vakterna blivit »helt okej« på gitarr och bra på basket.
                 </p>
-                <img className="articleImage" src={require('../../assets/icons/products.jpg')} alt=""/>
+                <img className="articleImage" src={require('../../assets/icons/text-image.jpg')} alt=""/>
                 <p style={fontSize}>
                   – Är man 1,94 kan man dunka, konstaterar Andreas.
                 </p>

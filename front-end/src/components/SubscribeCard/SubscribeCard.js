@@ -26,7 +26,7 @@ class SubscribeCard extends Component {
               </div>
             </div>
             <div className="closeKeepReading" >
-              <img src={require('../../assets/icons/closeblack.svg')} alt=""/>
+              <img onClick={this.props.removeTopBannerCard} src={require('../../assets/icons/closeblack.svg')} alt=""/>
             </div>
           </div>
         </Link>

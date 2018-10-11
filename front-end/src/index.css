@@ -150,75 +150,79 @@ body {
   width: auto;
   height: auto;
   padding: 0 16px; }
-  .bannerCardWrapper a {
-    text-decoration: none; }
-    .bannerCardWrapper a .bannerCard {
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      background-color: #FFFFFF;
-      position: relative;
-      width: 100%;
-      height: 112px;
+  .bannerCardWrapper .bannerCard {
+    margin-top: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    height: 112px;
+    display: flex;
+    flex-direction: row; }
+    .bannerCardWrapper .bannerCard a {
       display: flex;
-      flex-direction: row; }
-      .bannerCardWrapper a .bannerCard .imageHere {
+      flex-direction: row;
+      text-decoration: none;
+      flex: 1; }
+      .bannerCardWrapper .bannerCard a .imageHere {
         border-top-left-radius: 12px;
         border-bottom-left-radius: 12px;
         height: 100%;
         width: 112px; }
-      .bannerCardWrapper a .bannerCard .textContentKeepReading {
+      .bannerCardWrapper .bannerCard a .textContentKeepReading {
         color: black;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex: 1; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading p {
+        .bannerCardWrapper .bannerCard a .textContentKeepReading p {
           font-size: 14px;
           margin-top: 16px;
           margin-left: 8px; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading {
+        .bannerCardWrapper .bannerCard a .textContentKeepReading .bottomContentKeepReading {
           box-sizing: border-box;
           padding: 0 0 3px; }
-          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading h2, .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading p {
+          .bannerCardWrapper .bannerCard a .textContentKeepReading .bottomContentKeepReading h2, .bannerCardWrapper .bannerCard a .textContentKeepReading .bottomContentKeepReading p {
             margin: 0;
             margin-left: 8px;
             margin-bottom: 4px; }
-          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading h2 {
+          .bannerCardWrapper .bannerCard a .textContentKeepReading .bottomContentKeepReading h2 {
             font-family: HarrietDisplayMedium;
             font-size: 18px;
             max-width: 80%;
             letter-spacing: 0.1px; }
-          .bannerCardWrapper a .bannerCard .textContentKeepReading .bottomContentKeepReading p {
+          .bannerCardWrapper .bannerCard a .textContentKeepReading .bottomContentKeepReading p {
             font-family: PfDinPro;
             font-size: 12px;
             margin-bottom: 0; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading p {
+        .bannerCardWrapper .bannerCard a .textContentKeepReading p {
           font-family: DinAlternateBold;
           margin-top: 12px; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading p:nth-child(3) {
+        .bannerCardWrapper .bannerCard a .textContentKeepReading p:nth-child(3) {
           font-size: 12px;
           font-family: PfDinPro; }
-        .bannerCardWrapper a .bannerCard .textContentKeepReading .progressBarKeepReading {
+        .bannerCardWrapper .bannerCard a .textContentKeepReading .progressBarKeepReading {
           height: 12px;
           width: 100%;
           background-color: #ECECEC;
           border-bottom-right-radius: 12px; }
-          .bannerCardWrapper a .bannerCard .textContentKeepReading .progressBarKeepReading .progress {
+          .bannerCardWrapper .bannerCard a .textContentKeepReading .progressBarKeepReading .progress {
             background-color: #E0AB9B;
             height: 100%; }
-      .bannerCardWrapper a .bannerCard .closeKeepReading {
-        z-index: 50;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 38px;
-        height: 38px; }
-        .bannerCardWrapper a .bannerCard .closeKeepReading img {
-          width: 16px;
-          height: 16px; }
+    .bannerCardWrapper .bannerCard .closeKeepReading {
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 38px; }
+      .bannerCardWrapper .bannerCard .closeKeepReading img {
+        width: 16px;
+        height: 16px; }
 
 .largeCardWrapper {
   box-sizing: border-box;
@@ -322,8 +326,28 @@ body {
       height: 100%; }
 
 .landingWrapper {
-  padding-top: 15px;
   transition: all 1s ease; }
+  .landingWrapper .topBannerCard-enter {
+    -webkit-transform: translateX(-120%);
+    transform: translateX(-120%);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    max-height: 0;
+    padding: 0 !important; }
+  .landingWrapper .topBannerCard-enter.topBannerCard-enter-active {
+    max-height: 60px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    padding: 2rem 0 !important; }
+  .landingWrapper .topBannerCard-exit {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  .landingWrapper .topBannerCard-exit.topBannerCard-exit-active {
+    -webkit-transform: translateX(120%);
+    transform: translateX(120%);
+    padding: 0; }
   .landingWrapper .landingLargeCardContainer {
     box-sizing: border-box;
     display: flex;
@@ -788,7 +812,7 @@ body {
 .subscribeCardWrapper {
   width: auto;
   height: auto;
-  padding: 0 16px; }
+  padding: 16px 16px 0; }
   .subscribeCardWrapper a {
     text-decoration: none; }
     .subscribeCardWrapper a .subscribeCard {
@@ -899,7 +923,7 @@ body {
   background-color: #ECECEC; }
   .leftToReadBar .progressBar {
     border-radius: 12px 0 0 12px;
-    width: 17px;
+    width: 31px;
     background-color: #E0AB9B;
     height: 8px; }
 

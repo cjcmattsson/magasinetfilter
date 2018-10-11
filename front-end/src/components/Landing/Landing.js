@@ -5,6 +5,7 @@ import SubscribeCard from '../SubscribeCard/SubscribeCard';
 import LargeCard from '../LargeCard/LargeCard';
 import SmallBannerCard from '../SmallBannerCard/SmallBannerCard';
 import SmallCard from '../SmallCard/SmallCard';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class Landing extends Component {
 
@@ -35,13 +36,30 @@ componentDidMount() {
   }
 }
 
+removeTopBannerCard = () => {
+  this.setState({showTopBannerCard: false})
+}
+
   render() {
     const {articles, switchMode} = this.props;
     const {latestArticle} = this.state;
 
     return (
       <div className="landingWrapper">
-        {latestArticle ? <BannerCard latestArticle={this.state.latestArticle}/> : <SubscribeCard />}
+        <TransitionGroup component="div" className="topBannerCard">
+          {latestArticle
+            ? <CSSTransition
+                classNames="topBannerCard"
+                timeout={{ enter: 250, exit: 250 }}>
+                <BannerCard removeTopBannerCard={this.removeTopBannerCard} latestArticle={this.state.latestArticle}/>
+              </CSSTransition>
+            : <CSSTransition
+                classNames="topBannerCard"
+                timeout={{ enter: 250, exit: 250 }}>
+                <SubscribeCard removeTopBannerCard={this.removeTopBannerCard} />
+              </CSSTransition>
+        }
+        </TransitionGroup>
         <h2 className="headerRecommended" style={{color: switchMode ? "#000000" : "#FFFFFF"}}>Rekommenderad läsning för dig</h2>
         <div className="landingLargeCardContainer">
           {articles && articles.map(article =>
